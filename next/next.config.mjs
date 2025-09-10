@@ -2,9 +2,7 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      { protocol: 'http', hostname: 'localhost', port: '1337', pathname: '/uploads/**' },
-      // prod:
-      // { protocol: 'https', hostname: 'cms.example.com', pathname: '/uploads/**' },
+     { hostname: process.env.IMAGE_HOSTNAME || 'localhost' }
     ],
   },
 };

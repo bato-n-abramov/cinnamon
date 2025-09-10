@@ -1,6 +1,6 @@
 import { sfetch } from "@/lib/strapi";
 
-export const revalidate = Number(process.env.NEXT_REVALIDATE_SECONDS || 60);
+export const revalidate = 60;
 
 async function getPage(slug) {
   const json = await sfetch("/api/pages", {
