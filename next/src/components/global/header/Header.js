@@ -12,6 +12,7 @@ export default function Header({ data }) {
   const menu = Array.isArray(data.menu) ? data.menu : [];
   const btn = data.header_button;
 
+
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 

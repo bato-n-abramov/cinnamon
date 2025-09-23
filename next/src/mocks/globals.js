@@ -13,7 +13,7 @@ export const globalMock = {
         height: 38,
       },
       menu: [
-        { id: 5, title: "Prior authorization", link: "#" },
+        { id: 5, title: "Prior authorization", link: "/prior-authorization" },
         { id: 6, title: "Financial assistance", link: "/financial-assistance" },
         { id: 7, title: "Premier access", link: "#" },
         { id: 8, title: "Our story", link: "#" },
@@ -62,7 +62,7 @@ export const globalMock = {
         {
           "id": 33,
           "title": "Prior authorization",
-          "link": "#"
+          "link": "/prior-authorization"
         },
         {
           "id": 34,

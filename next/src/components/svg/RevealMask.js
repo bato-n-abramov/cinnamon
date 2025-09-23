@@ -1,7 +1,6 @@
-// components/svg/RevealMask.js
 import { motion } from 'framer-motion';
 
-export default function RevealMask({ id='reveal', duration=0.9, delay=0 }) {
+export default function RevealMask({ id = 'reveal', duration = 0.9, delay = 0 }) {
   return (
     <mask id={id} maskUnits="userSpaceOnUse">
       <motion.rect

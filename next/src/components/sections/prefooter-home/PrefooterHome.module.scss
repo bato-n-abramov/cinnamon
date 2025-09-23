@@ -30,6 +30,10 @@
         font-weight: 600;
         color: var(--color-amber-glow);
     }
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 }
 
 .prefooterHomeText {

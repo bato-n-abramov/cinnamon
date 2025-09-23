@@ -1,0 +1,85 @@
+.SpeedToTherapy {
+    background: var(--color-light-grey);
+    padding: 125px 0;
+
+    @media (max-width: 768px) {
+        padding: 80px 0;
+    }
+}
+
+.title {
+    text-align: center;
+    color: var(--color-deep-teal);
+    margin-bottom: 70px;
+    text-transform: capitalize;
+
+    @media (max-width: 768px) {
+        margin-bottom: 40px;
+    }
+
+    strong {
+        color: var(--color-amber-glow);
+        font-weight: 600;
+    }
+}
+
+.list {
+    display: flex;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px 25px;
+    max-width: 295px;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+}
+
+.decor {
+    width: 100%;
+    max-width: 165px;
+    height: 100px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.itemIcon {
+    width: 160px;
+    margin-bottom: 25px;
+    aspect-ratio: 1/1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        width: 100px;
+    }
+}
+
+.itemText {
+    text-align: center;
+
+    strong {
+        font-weight: 600;
+    }
+}

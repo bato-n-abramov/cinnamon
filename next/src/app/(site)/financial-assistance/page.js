@@ -60,9 +60,14 @@ export default function FinancialAssistancePage() {
         ],
     };
 
+    const heroData = {
+        title: "Smart <br /><em>Financial Assistance</em>",
+        subtitle: "Automated, compliant support that lowers costs and improves adherence.",
+    }
+
     return (
         <main>
-            <HeroV2 scrollTargetRef={nextSectionRef} />
+            <HeroV2 data = {heroData} scrollTargetRef={nextSectionRef} />
             <AssistanceBenefits ref={nextSectionRef} />
             <GovernmentAssistance />
             <FoundationProgram />
