@@ -67,7 +67,7 @@ export const globalMock = {
         {
           "id": 34,
           "title": "Financial assistance",
-          "link": "#"
+          "link": "/financial-assistance"
         },
         {
           "id": 35,

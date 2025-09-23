@@ -29,8 +29,7 @@ export default function Logos({ data, speed = 30 }) {
               width={width}
               height={height}
               className={styles.logoImg}
-              loading="lazy"
-              decoding="async"
+              unoptimized
             />
           </li>
         );
