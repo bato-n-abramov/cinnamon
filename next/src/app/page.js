@@ -1,44 +1,69 @@
-import Image from "next/image";
-import { sfetch } from "@/lib/strapi";
+import { sfetch } from '@/lib/strapi';
+import { Section } from '@/components/sections';
+import { homepageMock } from '@/mocks/homepage';
+export const revalidate = 60; // ISR
 
-export default async function Home() {
-  const json = await sfetch("/api/pages", {
+async function getHomepage() {
+  const json = await sfetch('/api/pages', {
+    cache: 'no-store',
+    revalidate: 0,
     query: {
-      filters: { slug: { $eq: "home" } },
-      populate: { sections: { populate: "*" } },
+      filters: { slug: { $eq: 'homepage' } },
+      populate: {
+        dynamic_zone: {
+          on: {
+            'dynamic-zone.hero': { populate: '*' },
+            'dynamic-zone.title-text': { populate: '*' },
+
+            'dynamic-zone.how-it-works': {
+              populate: {
+                items_list: { populate: '*' },
+              },
+            },
+            // 'dynamic-zone.process-circles': {
+            //   populate: {
+            //     Process_circles: { populate: '*' }, 
+            //   },
+            // },
+            'dynamic-zone.circles': {
+              populate: {
+                Circle_items: { populate: '*' },
+              },
+            },
+            'dynamic-zone.logos': { populate: '*' },
+            'dynamic-zone.features': {
+              populate: {
+                Features_Items: { populate: '*' },
+              },
+            },
+            'dynamic-zone.grahic': {
+              populate: '*'
+            },
+
+            'dynamic-zone.prefooter-home': { populate: '*' },
+
+            // 'dynamic-zone.whatever': { populate: '*' },
+          },
+        },
+      },
+      publicationState: 'live',
     },
   });
+  return json?.data?.[0] ?? null;
+}
 
-  const page = json?.data?.[0];
-  if (!page) return <h1>No content</h1>;
 
+
+
+export default async function Home() {
+  // const page = await getHomepage();
+  const page = homepageMock;
+  if (!page) return <main><h1>Empty</h1></main>;
   return (
     <main>
-      {page.sections?.map((section) => (
-        <Section key={section.id} data={section} />
+      {page.dynamic_zone?.map((block, i) => (
+        <Section key={block.id ?? i} block={block} />
       ))}
     </main>
   );
-}
-
-function Section({ data }) {
-  switch (data.__component) {
-    case "hero.hero":
-      return (
-        <section className="hero">
-          <h1>{data.Title}</h1>
-          {data.Image?.url && (
-            <Image
-              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${data.Image.url}`}
-              alt={data.Image.alternativeText || ""}
-              width={data.Image.width || 200}
-              height={data.Image.height || 200}
-            />
-          )}
-        </section>
-      );
-
-    default:
-      return null;
-  }
 }

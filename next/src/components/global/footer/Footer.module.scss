@@ -1,0 +1,140 @@
+.footer {
+    background: url('/footer_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.footerWrapper {
+    padding: 80px 35px 15px;
+
+    @media (max-width: 768px) {
+        padding: 50px 15px 15px;
+    }
+}
+
+.footerCol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.footerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+.footerLogo {
+    display: block;
+    width: 210px;
+    margin-bottom: 16px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.footerSubtitle {
+    max-width: 255px;
+    font-size: var(--font-body-1);
+    color: var(--color-dark-green);
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+.footerMenus {
+    gap: 80px;
+    margin-bottom: 65px;
+    margin-right: 25px;
+    display: flex;
+
+    @media (max-width: 768px) {
+        margin-right: 0;
+    }
+
+    @media (max-width: 575px) {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+.footerMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--color-dark-green);
+    font-size: var(--font-body-2);
+
+    @media (max-width: 768px) {
+        gap: 14px;
+    }
+}
+
+.footerMenuTitle {
+    text-transform: uppercase;
+    color: var(--color-deep-teal);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+
+    @media (max-width: 575px) {
+        font-size: 19px;
+    }
+}
+
+.footerLink {
+    transition: var(--transition);
+    
+    &:hover {
+        text-decoration: underline;
+        color: var(--color-deep-teal);
+    }
+}
+
+
+.footerLogos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+
+    @media (max-width:768px) {
+        width: 100%;
+        justify-content: center;
+        gap: 24px;
+    }
+}
+
+.footerText {
+    max-width: 315px;
+    color: var(--color-dark-green);
+    font-size: var(--font-body-1);
+
+    @media (max-width: 768px) {
+        font-size: var(--font-body-2);
+        text-align: center;
+    }
+}
+
+.footerImage {
+    width: 100%;
+
+    img {
+        width: 100%;
+        transform: translateY(10px);
+        height: auto;
+    }
+}

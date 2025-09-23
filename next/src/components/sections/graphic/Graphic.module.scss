@@ -1,0 +1,65 @@
+.graphic {
+    padding: 125px 0;
+
+    @media (max-width: 768px) {
+        padding: 80px 0;
+    }
+}
+
+.graphicWrapper {
+    @media (max-width: 768px) {
+        padding: 0 10px;
+    }
+}
+
+.graphicTitle {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--color-deep-teal);
+    font-weight: 600;
+    text-transform: capitalize;
+
+    strong {
+        color: var(--color-amber-glow);
+        font-weight: 600;
+    }
+}
+
+.graphicSubtitle {
+    font-size: var(--font-body-1);
+    color: var(--color-dark-green);
+    text-align: center;
+}
+
+.graphicImage {
+    width: 100%;
+    margin-top: 80px;
+    max-height: 715px;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        margin-top: 40px;
+        max-height: unset;
+    }
+
+    .desktop {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .mob {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,136 @@
+.governmentAssistance {
+    padding: 125px 0;
+
+    @media (max-width: 768px) {
+        padding: 80px 0;
+    }
+}
+
+.inner {
+    @media (max-width: 768px) {
+        padding: 0 10px;
+    }
+}
+
+.textContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 65px;
+
+    @media (max-width: 1025px) {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+}
+
+.title {
+    color: var(--color-deep-teal);
+    font-weight: 600;
+    font-size: 36px;
+    max-width: 480px;
+    text-transform: capitalize;
+
+    @media (max-width: 1025px) {
+        max-width: 100%;
+    }
+
+    strong {
+        color: var(--color-amber-glow);
+        font-weight: 600;
+    }
+}
+
+.text {
+    max-width: 530px;
+
+    @media (max-width: 1025px) {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+.imageContent {
+    display: flex;
+    align-items: flex-end;
+    padding: 35px 0;
+    width: 100%;
+    position: relative;
+    height: 455px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media (max-width: 991px) {
+        height: unset;
+    }
+
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    position: relative;
+    gap: 14px;
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.item {
+    min-height: 200px;
+    padding: 32px 45px;
+    border-radius: 16px;
+    border: 2px solid #FFF;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 4px 25px 0 rgba(82, 82, 82, 0.08);
+    backdrop-filter: blur(12.5px);
+
+    @media (max-width: 991px) {
+        padding: 20px;
+        min-height: unset;
+    }
+}
+
+.itemTitle {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-deep-teal);
+    text-transform: uppercase;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+}
+
+.itemText {
+    font-size: var(--font-body-1);
+    font-weight: 400;
+    color: var(--color-dark-green);
+    line-height: 1.37;
+
+    @media (max-width: 768px) {
+        font-size: var(--font-body-2);
+    }
+}
+
+.quote {
+    max-width: 820px;
+    margin: 40px auto 0; 
+    border-left: 4px solid var(--color-soft-aqua);
+    padding-left: 48px;
+    color: var(--color-dark-green);
+
+    @media (max-width:768px) {
+        padding-left: 28px;
+    }
+}

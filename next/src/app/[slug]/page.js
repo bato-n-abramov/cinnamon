@@ -1,5 +1,6 @@
 import { sfetch } from "@/lib/strapi";
-
+import Image
+  from "next/image";
 export const revalidate = 60;
 
 async function getPage(slug) {
@@ -32,7 +33,7 @@ function Section({ data }) {
         <section className="hero">
           <h2>{data.Title}</h2>
           {data.Image?.url && (
-            <img
+            <Image
               src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${data.Image.url}`}
               alt=""
               width={data.Image.width}
@@ -41,7 +42,7 @@ function Section({ data }) {
           )}
         </section>
       );
- 
+
     default:
       return null;
   }
