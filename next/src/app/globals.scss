@@ -13,9 +13,10 @@
   --color-golden-apricot: #FFAB40;
   --color-soft-honey: #FCC670;
   --color-warm-ivory: #FEF7EA;
-  --color-white: #fff;
+  --color-white: #FFF;
   --color-black: #000;
   --color-orange: #D1681E;
+  --color-danger: #EC4840;
   --heading-size-h1: 84px;
   --heading-size-h2: 48px;
   --heading-size-h3: 48px;
@@ -125,9 +126,11 @@ h4 {
   border-radius: 65px;
   background-color: var(--color-deep-teal);
   transition: var(--transition);
+  cursor: pointer;
 
   .button-icon-text {
     padding: 0 20px;
+    color: var(--color-white);
   }
 
   .button-icon-arrow {
@@ -169,6 +172,67 @@ main {
   padding-top: 104px;
 }
 
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    padding: 16px;
+    font-weight: 400;
+    font-size: var(--font-body-2);
+    background: var(--color-white);
+    border: 1px solid rgba(22, 41, 41, 0.25);
+    border-radius: 6px;
+    color: var(--color-dark-green);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: var(--transition);
+    outline: none;
+}
+
+textarea {
+  height: 90px;
+}
+
+label {
+  font-weight: 500;
+}
+
+input::placeholder,
+textarea::placeholder {
+    opacity: 1;
+    color: rgba(22, 41, 41, 0.50);
+    font-family: var(--font-montserrat);
+}
+
+input,
+textarea {
+  font-size: var(--font-body-2);
+  appearance: none;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid rgba(22, 41, 41, 0.55);
+}
+
+input[type='checkbox'] {
+  width: 0;
+  height: 0;
+  margin: 0;
+  border: none;
+}
+
+input.filled,
+textarea.filled {
+  border: 1px solid rgba(22, 41, 41, 0.10);
+  background: #FAFAFA;
+}
 
 @media (max-width: 768px) {
     :root {

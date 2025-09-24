@@ -2,44 +2,76 @@
 import { mediaUrl } from '@/lib/strapi';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from './Features.module.scss';
 
 export default function Features({ data }) {
+    const { Title, Subtitle, Features_Items = [] } = data || {};
 
-    const { Title, Subtitle, Features_Items } = data;
+    const slideUp = {
+        hidden: { opacity: 0, y: 40 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+    };
+
+    const itemsContainer = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.12,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemSlide = {
+        hidden: { opacity: 0, y: 36 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } }
+    };
 
     return (
-        <section className={styles.featured}>
+        <motion.section
+            className={styles.featured}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+        >
             <div className={`${styles.featuredWrapper} container`}>
-                <div className={styles.featuredTitle}>{Array.isArray(Title) && Title.length > 0 && <BlocksRenderer content={Title} />}</div>
-                <div className={styles.featuredSubtitle}>{Subtitle}</div>
-                <div className={styles.featuredItems}>
-                    {Array.isArray(Features_Items) &&
-                        Features_Items.length > 0 &&
-                        Features_Items.map((item) => {
-                            const icon = item.Image;
+                <motion.div className={styles.featuredTitle} variants={slideUp}>
+                    {Array.isArray(Title) && Title.length > 0 && <BlocksRenderer content={Title} />}
+                </motion.div>
 
+                <motion.div className={styles.featuredSubtitle} variants={slideUp}>
+                    {Subtitle}
+                </motion.div>
+
+                <motion.div className={styles.featuredItems} variants={itemsContainer}>
+                    {Array.isArray(Features_Items) && Features_Items.length > 0 &&
+                        Features_Items.map((item) => {
+                            const icon = item?.Image;
                             const src = icon?.url ? mediaUrl(icon.url) : null;
 
                             return (
-                                <div key={item.id} className={styles.item}>
+                                <motion.div key={item.id} className={styles.item} variants={itemSlide}>
                                     {src && (
                                         <div className={styles.itemIcon}>
                                             <Image
                                                 src={src}
-                                                alt={icon?.alternativeText || item.Title || ''}
+                                                alt={icon?.alternativeText || item?.Title || ''}
                                                 width={40}
                                                 height={40}
+                                                loading="lazy"
+                                                decoding="async"
                                             />
                                         </div>
                                     )}
-                                    <div className={styles.itemText}>{Array.isArray(item.Text) && item.Text.length > 0 && <BlocksRenderer content={item.Text} />}</div>
-
-                                </div>
+                                    <div className={styles.itemText}>
+                                        {Array.isArray(item?.Text) && item.Text.length > 0 && <BlocksRenderer content={item.Text} />}
+                                    </div>
+                                </motion.div>
                             );
                         })}
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

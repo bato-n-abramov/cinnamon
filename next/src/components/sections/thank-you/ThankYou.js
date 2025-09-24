@@ -5,8 +5,8 @@ import styles from './ThankYou.module.scss';
 export default function ThankYou() {
     return (
         <div className={styles.thanks}>
-            <h2 className={styles.thanksTitle}>Thank You!</h2>
-            <p className={styles.thanksText}>
+            <h2 className={styles.title}>Thank You!</h2>
+            <p className={styles.text}>
                 Your message has been successfully sent. <br />
                 Our team will get back to you shortly.
             </p>

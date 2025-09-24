@@ -16,13 +16,28 @@ export default function ContactForm() {
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
     const Schema = Yup.object({
-        fullName: Yup.string().trim().required('Full name is required'),
-        email: Yup.string().trim().email('Invalid email').required('Email is required'),
-        org: Yup.string().trim().required('Organization is required'),
+        fullName: Yup.string()
+            .trim()
+            .matches(/^[^\d]*$/, 'Name cannot contain numbers')
+            .required('Full name is required'),
+        email: Yup.string()
+            .trim()
+            .email('Invalid email')
+            .required('Email is required'),
+        org: Yup.string()
+            .trim()
+            .required('Organization is required'),
         isManufacturerOrHealthSystem: Yup.boolean(),
-        title: Yup.string().trim().required('Job title is required'),
-        goals: Yup.string().trim().required('Please tell us your goals'),
-        how: Yup.string().trim().nullable(),
+        title: Yup.string()
+            .trim()
+            .matches(/^[^\d]*$/, 'Title cannot contain numbers')
+            .required('Job title is required'),
+        goals: Yup.string()
+            .trim()
+            .required('Please tell us your goals'),
+        how: Yup.string()
+            .trim()
+            .nullable(),
         captcha: Yup.string().required('Captcha is required'),
     });
 
@@ -70,30 +85,60 @@ export default function ContactForm() {
             validationSchema={Schema}
             onSubmit={submit}
         >
-            {({ isValid, dirty, submitForm, setFieldValue }) => {
-                const canSubmit = isValid && dirty && !submitting;
+            {({ submitForm, setFieldValue }) => {
                 return (
-                    <Form noValidate>
+                    <Form noValidate className={styles.form}>
                         <div className={styles.row}>
                             <div className={styles.col}>
-                                <label>Full name</label>
-                                <Field name="fullName" type="text" placeholder="Enter your full name" />
-                                <ErrorMessage name="fullName" component="span" className="err" />
+                                <label htmlFor="fullName">Full name*</label>
+                                <Field id="fullName" name="fullName">
+                                    {({ field, form }) => (
+                                        <input
+                                            {...field}
+                                            type='text'
+                                            placeholder="Enter your full name"
+                                            className={`${styles.input} ${form.values.fullName ? 'filled' : ''
+                                                }`}
+                                        />
+                                    )}
+                                </Field>
+                                <ErrorMessage name="fullName" component="span" className={styles.err} />
                             </div>
                             <div className={styles.col}>
-                                <label>Work email</label>
-                                <Field name="email" type="email" placeholder="Enter your work email" />
-                                <ErrorMessage name="email" component="span" className="err" />
+                                <label htmlFor="email">Work email*</label>
+                                <Field id="email" name="email" >
+                                    {({ field, form }) => (
+                                        <input
+                                            {...field}
+                                            type='email'
+                                            placeholder="Enter your work email"
+                                            className={`${form.values.email ? 'filled' : ''
+                                                }`}
+                                        />
+                                    )}
+                                </Field>
+                                <ErrorMessage name="email" component="span" className={styles.err} />
                             </div>
                         </div>
 
                         <div className={styles.row}>
                             <div className={styles.col}>
-                                <label>Organization</label>
-                                <Field name="org" type="text" placeholder="Enter your organization" />
-                                <ErrorMessage name="org" component="span" className="err" />
-                                <label className="checkbox">
-                                    <Field name="isManufacturerOrHealthSystem" type="checkbox" />
+                                <label htmlFor="org">Organization*</label>
+                                <Field id="org" name="org">
+                                    {({ field, form }) => (
+                                        <input
+                                            {...field}
+                                            type='text'
+                                            placeholder="Enter your organization"
+                                            className={`${form.values.org ? 'filled' : ''
+                                                }`}
+                                        />
+                                    )}
+                                </Field>
+                                <ErrorMessage name="org" component="span" className={styles.err} />
+                                <label htmlFor="isManufacturerOrHealthSystem" className="checkbox">
+                                    <Field id="isManufacturerOrHealthSystem" name="isManufacturerOrHealthSystem" type="checkbox" />
+                                    <span className={styles.customCheckbox}></span>
                                     <span>Manufacturer or Health System</span>
                                 </label>
                             </div>
@@ -101,24 +146,53 @@ export default function ContactForm() {
 
                         <div className={styles.row}>
                             <div className={styles.col}>
-                                <label>Job title</label>
-                                <Field name="title" type="text" placeholder="Enter your job title" />
-                                <ErrorMessage name="title" component="span" className="err" />
+                                <label htmlFor="title">Job title*</label>
+                                <Field id="title" name="title">
+                                    {({ field, form }) => (
+                                        <input
+                                            {...field}
+                                            type='text'
+                                            placeholder="Enter your job title"
+                                            className={`${form.values.title ? 'filled' : ''
+                                                }`}
+                                        />
+                                    )}
+                                </Field>
+                                <ErrorMessage name="title" component="span" className={styles.err} />
                             </div>
                         </div>
 
                         <div className={styles.row}>
                             <div className={styles.col}>
-                                <label>Your goals</label>
-                                <Field as="textarea" name="goals" rows={3} placeholder="Enter your goals / context" />
-                                <ErrorMessage name="goals" component="span" className="err" />
+                                <label htmlFor="goals">Your goals*</label>
+                                <Field id="goals" name="goals" >
+                                    {({ field, form }) => (
+                                        <input
+                                            {...field}
+                                            type='text'
+                                            placeholder="Enter your goals / context"
+                                            className={`${form.values.goals ? 'filled' : ''
+                                                }`}
+                                        />
+                                    )}
+                                </Field>
+                                <ErrorMessage name="goals" component="span" className={styles.err} />
                             </div>
                         </div>
 
                         <div className={styles.row}>
                             <div className={styles.col}>
-                                <label>How did you hear about us? (optional)</label>
-                                <Field as="textarea" name="how" rows={3} placeholder="How did you hear about us?" />
+                                <label htmlFor="how">How did you hear about us? (optional)</label>
+                                <Field id="how"  name="how" rows={3}  >
+                                    {({ field, form }) => (
+                                        <textarea
+                                            {...field}
+                                            placeholder="How did you hear about us?"
+                                            className={`${form.values.how ? 'filled' : ''
+                                                }`}
+                                        />
+                                    )}
+                                </Field>
                             </div>
                         </div>
 
@@ -129,7 +203,7 @@ export default function ContactForm() {
                                     sitekey={siteKey}
                                     onChange={(token) => setFieldValue('captcha', token)}
                                 />
-                                <ErrorMessage name="captcha" component="span" className="err" />
+                                <ErrorMessage name="captcha" component="span" className={styles.err} />
                             </div>
                         </div>
 
@@ -138,7 +212,7 @@ export default function ContactForm() {
                             tabIndex={0}
                             onClick={submitForm}
                             onKeyDown={(e) => { if (e.key === 'Enter') submitForm(); }}
-                            className={`button-icon`}
+                            className={`${styles.buttonSubmit} button-icon`}
                         >
                             <span className='button-icon-text'>Send Message</span>
                             <span className='button-icon-arrow'>

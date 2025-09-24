@@ -15,8 +15,10 @@ export default function ContactLayout({ children }) {
 
     return (
         <div className={montserrat.variable}>
-            <Header data={global?.Header?.[0] || global?.Header || null} />
-            {children}
+            <div className="pageWrapper">
+                <Header data={global?.Header?.[0] || global?.Header || null} />
+                {children}
+            </div>
         </div>
     );
 }

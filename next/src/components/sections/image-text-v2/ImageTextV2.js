@@ -1,12 +1,41 @@
 'use client';
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'framer-motion';
+
 import styles from './ImageTextV2.module.scss';
 
 export default function ImageTextV2({ data }) {
+
+    const reduce = useReducedMotion();
+
+    const container = {
+        hidden: {},
+        show: {
+            transition: {
+                delayChildren: 0.05,
+                staggerChildren: 0.12,
+            },
+        },
+    };
+
+    const fromLeft = {
+        hidden: { opacity: 0, x: reduce ? 0 : -28 },
+        show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    };
+
+    const fromRight = {
+        hidden: { opacity: 0, x: reduce ? 0 : 28 },
+        show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    };
+
     return (
-        <section className={styles.imageTextV2}>
+        <motion.section className={styles.imageTextV2}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={container}>
             <div className={`${styles.inner} container`}>
-                <div className={styles.textContent}>
+                <motion.div variants={fromLeft} className={styles.textContent}>
                     <h2 className={styles.title}>More <strong>Approvals</strong></h2>
                     <div className={styles.text}>
                         <ul>
@@ -15,11 +44,11 @@ export default function ImageTextV2({ data }) {
                             <li>Smart resubmission workflows <strong>accelerate appeals and reduce delays</strong></li>
                         </ul>
                     </div>
-                </div>
-                <div className={styles.image}>
+                </motion.div>
+                <motion.div variants={fromRight} className={styles.image}>
                     <Image src={'/image-textv2.png'} alt="Image Text" width={500} height={500} />
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

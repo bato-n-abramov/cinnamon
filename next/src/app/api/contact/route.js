@@ -68,7 +68,7 @@ export async function POST(req) {
 
         if (error) {
             console.error('[Resend] send error:', error);
-            return json({ error: 'Send failed' }, { status: 500 });
+            return json({ error: error }, { status: 500 });
         }
 
         return json({ ok: true });

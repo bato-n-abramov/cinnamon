@@ -1,19 +1,40 @@
 'use client';
 import { mediaUrl } from '@/lib/strapi';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { motion } from 'framer-motion';
 import styles from './Graphic.module.scss';
 
 export default function Graphic({ data }) {
-
   const { Title, Subtitle, Image, mobImage } = data;
 
+  const slideUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.8, ease: 'easeOut', delay: 0.3 } },
+  };
+
   return (
-    <section className={styles.graphic}>
+    <motion.section
+      className={styles.graphic}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className={`${styles.graphicWrapper} container`}>
-        <div className={styles.graphicTitle}>{Array.isArray(Title) && Title.length > 0 && <BlocksRenderer content={Title} />}</div>
-        <div className={styles.graphicSubtitle}>{Subtitle}</div>
+        <motion.div className={styles.graphicTitle} variants={slideUp}>
+          {Array.isArray(Title) && Title.length > 0 && <BlocksRenderer content={Title} />}
+        </motion.div>
+
+        <motion.div className={styles.graphicSubtitle} variants={slideUp}>
+          {Subtitle}
+        </motion.div>
       </div>
-      <div className={styles.graphicImage}>
+
+      <motion.div className={styles.graphicImage} variants={fadeIn}>
         {Image?.url && (
           <img
             src={mediaUrl(Image.url)}
@@ -33,7 +54,7 @@ export default function Graphic({ data }) {
             className={styles.mob}
           />
         )}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

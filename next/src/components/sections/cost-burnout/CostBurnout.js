@@ -1,21 +1,48 @@
 'use client';
+import { motion, useReducedMotion } from 'framer-motion';
 
 import styles from './CostBurnout.module.scss';
 
 export default function CostBurnout({ data }) {
+
+    const reduce = useReducedMotion();
+
+    const container = {
+        hidden: {},
+        show: {
+            transition: {
+                delayChildren: 0.05,
+                staggerChildren: 0.12,
+            },
+        },
+    };
+
+    const fromLeft = {
+        hidden: { opacity: 0, x: reduce ? 0 : -28 },
+        show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    };
+
+    const fromRight = {
+        hidden: { opacity: 0, x: reduce ? 0 : 28 },
+        show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    };
+
     return (
-        <section className={styles.CostBurnout}>
+        <motion.section className={styles.CostBurnout} initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={container}>
             <div className={`${styles.inner} container`}>
-                <h2 className={styles.title}>Lower Cost & Less Burnout</h2>
-                <div className={styles.text}>
+                <motion.h2 variants={fromLeft} className={styles.title}>Lower Cost & Less Burnout</motion.h2>
+                <motion.div variants={fromRight} className={styles.text}>
                     <ul>
                         <li>Providers <strong>save thousands</strong> in administrative overhead</li>
                         <li>Automated workflows <strong>reduce staff burden and physician burnout</strong></li>
                         <li>Freed resources can be redirected to direct <strong>patient care</strong></li>
 
                     </ul>
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

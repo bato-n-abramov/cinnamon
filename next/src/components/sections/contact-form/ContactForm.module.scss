@@ -1,0 +1,78 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+    padding: 45px 35px 30px 0;
+
+    @media (max-width: 1025px) {
+        padding: 0;
+    }
+}
+.row {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 0 auto;
+    font-size: var(--font-body-2);
+}
+
+.err {
+    font-size: 12px;
+    color: var(--color-danger);
+    font-weight: 500;
+}
+
+input:has(+ .err),
+textarea:has(+ .err) {
+    border: 1px solid var(--color-danger);
+}
+
+.customCheckbox {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(22, 41, 41, 0.25);
+    border-radius: 4px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        visibility: hidden;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEyIDEzIiBmaWxsPSJub25lIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjQ3Nzc5IDguMTc5MThMMi45MjQ0MyA2LjY1NDA3QzIuNjQ5MDYgNi4zODM3MSAyLjIwMjYgNi4zODM3MSAxLjkyNzIzIDYuNjU0MDdDMS42NTE4NiA2LjkyNDQzIDEuNjUxODYgNy4zNjI3NyAxLjkyNzIzIDcuNjMzMTRMNC4wNDI2IDkuNzEwMDRDNC4zNDE1MyAxMC4wMDM1IDQuODM0NDggOS45NzQ1OSA1LjA5NTY2IDkuNjQ4MjNMMTAuMDMxNSA0LjEwOThDMTAuMjcyMSAzLjgwOTE1IDEwLjIxODkgMy4zNzM5MyA5LjkxMjczIDMuMTM3NzFDOS42MDY1MSAyLjkwMTQ4IDkuMTYzMjMgMi45NTM3MSA4LjkyMjYzIDMuMjU0MzZMNC40Nzc3OSA4LjE3OTE4WiIgZmlsbD0id2hpdGUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC4zODQ2MTUiLz4KPC9zdmc+");
+        background-position: center;
+    }
+}
+
+input:checked + .customCheckbox {
+   background-color: var(--color-soft-aqua);
+   border-color: var(--color-soft-aqua);
+
+   &::after {
+    opacity: 1;
+    visibility: visible;
+   }
+}
+
+.buttonSubmit {
+    margin-top: 40px;
+}

@@ -15,13 +15,13 @@ export const globalMock = {
       menu: [
         { id: 5, title: "Prior authorization", link: "/prior-authorization" },
         { id: 6, title: "Financial assistance", link: "/financial-assistance" },
-        { id: 7, title: "Premier access", link: "#" },
+        { id: 7, title: "Premier access", link: "/premier-access" },
         { id: 8, title: "Our story", link: "#" },
       ],
       header_button: {
         id: 6,
         text: "Contact Us",
-        URL: "#",
+        URL: "/contact",
         target: "_self",
       },
     },
@@ -55,7 +55,7 @@ export const globalMock = {
       "footer_button": {
         "id": 35,
         "text": "Contact us",
-        "URL": "#",
+        "URL": "/contact",
         "target": "_self"
       },
       "Menu_1": [
@@ -72,7 +72,7 @@ export const globalMock = {
         {
           "id": 35,
           "title": "Premier access",
-          "link": "#"
+          "link": "/premier-access"
         },
         {
           "id": 36,

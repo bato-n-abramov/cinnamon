@@ -23,6 +23,7 @@
     position: relative;
     z-index: 2;
     height: 100%;
+    align-items: center;
 }
 
 .heroV2Title {
@@ -46,15 +47,19 @@
 
 .heroV2Text {
     max-width: 700px;
-    margin: 0 auto 45px;
+    margin: 0 auto 0;
     font-size: var(--font-body-1);
     color: var(--color-dark-green);
     font-weight: 400;
+    line-height: 1.37;
 }
 
 
-
 .heroV2Cta {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.heroV2Scroll {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,6 +69,16 @@
     margin: auto auto 0;
     cursor: pointer;
     font-weight: 500;
+
+    svg {
+        transition: var(--transition);
+    }
+
+    &:hover {
+        svg {
+            transform: translateY(10px);
+        }
+    }
 }
 
 

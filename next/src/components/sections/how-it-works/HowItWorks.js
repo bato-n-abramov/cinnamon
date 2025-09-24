@@ -27,19 +27,39 @@ export default function HowItWorks({ data }) {
         show: (i = 0) => ({ x: 0, opacity: 1, transition: { duration: 0.5, delay: 1, ease: 'easeOut' } })
     };
 
+    const slideUp = (delay = 0) => ({
+        hidden: { y: 30, opacity: 0 },
+        show: {
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.6, ease: 'easeOut', delay }
+        }
+    });
 
     return (
         <motion.section
             className={styles.howItWorks}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
         >
             <div className={`${styles.howItWorksWrapper} container`}>
                 {Array.isArray(Title) && Title.length > 0 && (
-                    <div className={styles.howItWorksTitle}><BlocksRenderer content={Title} /></div>
+                    <motion.div
+                        className={styles.howItWorksTitle}
+                        variants={slideUp(0)}
+                    >
+                        <BlocksRenderer content={Title} />
+                    </motion.div>
                 )}
-                {Subtitle && <div className={styles.howItWorksSubtitle}>{Subtitle}</div>}
+                {Subtitle && (
+                    <motion.div
+                        className={styles.howItWorksSubtitle}
+                         variants={slideUp(0.5)}
+                    >
+                        {Subtitle}
+                    </motion.div>
+                )}
 
                 <div className={styles.graphicWrapper}>
                     {main_content && (
