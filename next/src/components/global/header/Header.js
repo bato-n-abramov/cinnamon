@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import styles from './Header.module.scss';
-import { mediaUrl } from '@/lib/strapi';
+import { usePathname } from "next/navigation";
+import styles from "./Header.module.scss";
+import { mediaUrl } from "@/lib/strapi";
 
 export default function Header({ data }) {
   const logo = data.logo;
@@ -24,23 +24,23 @@ export default function Header({ data }) {
         setIsOpen(false);
       }
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
   const renderNavLink = (item) => {
-    const href = item.link || '#';
+    const href = item.link || "#";
     const label = item.title || href;
     const isActive = pathname === href;
     return (
@@ -62,7 +62,7 @@ export default function Header({ data }) {
           {logo?.url && (
             <Image
               src={mediaUrl(logo.url)}
-              alt={logo.alternativeText || 'Logo'}
+              alt={logo.alternativeText || "Logo"}
               width={logo.width || 120}
               height={logo.height || 40}
               priority
@@ -85,7 +85,7 @@ export default function Header({ data }) {
         </nav>
 
         {btn?.text && (() => {
-          const href = btn.URL || btn.url || '#';
+          const href = btn.URL || btn.url || "#";
           const target = btn.target;
           return (
             <Link className={`${styles.headerCta} button-primary`} href={href} target={target}>
@@ -123,7 +123,7 @@ export default function Header({ data }) {
                   {menu.map(renderNavLink)}
                 </nav>
                 {btn?.text && (() => {
-                  const href = btn.URL || btn.url || '#';
+                  const href = btn.URL || btn.url || "#";
                   const target = btn.target;
                   return (
                     <Link className={`${styles.headerCtaMob} button-primary`} href={href} target={target} onClick={() => setIsOpen(false)}>

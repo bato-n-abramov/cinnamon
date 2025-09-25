@@ -3,7 +3,7 @@ import ContactForm from "@/components/sections/contact-form/ContactForm";
 import { Location } from "@/components/global/icons/Location";
 import { Phone } from "@/components/global/icons/Phone";
 import { Message } from "@/components/global/icons/Message";
-import styles from './ContactPage.module.scss';
+import styles from "./ContactPage.module.scss";
 
 export default function ContactPage() {
 

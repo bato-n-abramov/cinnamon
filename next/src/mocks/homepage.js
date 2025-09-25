@@ -122,12 +122,12 @@ export const homepageMock = {
             "updatedAt": "2025-09-18T14:37:06.228Z",
             "publishedAt": "2025-09-18T14:37:02.114Z"
           },
-"Link": {
-"id": 5,
-"Link_url": "#",
-"Link_title": "Learn More",
-"Link_target": "_self"
-}
+          "Link": {
+            "id": 5,
+            "Link_url": "#",
+            "Link_title": "Learn More",
+            "Link_target": "_self"
+          }
         },
         {
           "id": 7,
@@ -154,12 +154,12 @@ export const homepageMock = {
             "updatedAt": "2025-09-18T14:37:02.113Z",
             "publishedAt": "2025-09-18T14:37:02.113Z"
           },
-"Link": {
-"id": 5,
-"Link_url": "#",
-"Link_title": "Learn More",
-"Link_target": "_self"
-}
+          "Link": {
+            "id": 5,
+            "Link_url": "#",
+            "Link_title": "Learn More",
+            "Link_target": "_self"
+          }
         },
         {
           "id": 5,

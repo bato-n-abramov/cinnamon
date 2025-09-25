@@ -1,9 +1,9 @@
-import { Resend } from 'resend';
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const json = (data, init = {}) =>
-    new Response(JSON.stringify(data), { status: 200, headers: { 'Content-Type': 'application/json' }, ...init });
+    new Response(JSON.stringify(data), { status: 200, headers: { "Content-Type": "application/json" }, ...init });
 
 export async function POST(req) {
     try {
@@ -67,24 +67,24 @@ export async function POST(req) {
         });
 
         if (error) {
-            console.error('[Resend] send error:', error);
+            console.error("[Resend] send error:", error);
             return json({ error: error }, { status: 500 });
         }
 
         return json({ ok: true });
     } catch (e) {
-        console.error('[contact POST] error:', e);
-        return json({ error: 'Server error' }, { status: 500 });
+        console.error("[contact POST] error:", e);
+        return json({ error: "Server error" }, { status: 500 });
     }
 }
 
-function escapeHtml(s = '') {
+function escapeHtml(s = "") {
     return String(s)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
 }
 function nl2br(s = '') {
-    return String(s).replace(/\n/g, '<br/>');
+    return String(s).replace(/\n/g, "<br/>");
 }

@@ -1,8 +1,8 @@
-'use client';
-import styles from './Footer.module.scss';
-import Link from 'next/link';
-import { mediaUrl } from '@/lib/strapi';
-import Image from 'next/image';
+"use client";
+import styles from "./Footer.module.scss";
+import Link from "next/link";
+import { mediaUrl } from "@/lib/strapi";
+import Image from "next/image";
 
 export default function Footer({ data }) {
   const logo = data.Logo || data.logo;
@@ -24,7 +24,7 @@ export default function Footer({ data }) {
               <Link href="/" className={styles.footerLogo}>
                 <Image
                   src={mediaUrl(logo.url)}
-                  alt={logo.alternativeText || 'Logo'}
+                  alt={logo.alternativeText || "Logo"}
                   width={logo.width || 120}
                   height={logo.height || 40}
                 />
@@ -69,7 +69,7 @@ export default function Footer({ data }) {
                   <img
                     key={img.id}
                     src={mediaUrl(img.url)}
-                    alt={img.alternativeText || 'logo'}
+                    alt={img.alternativeText || "logo"}
 
                   />
                 ))}
@@ -81,8 +81,8 @@ export default function Footer({ data }) {
       </div>
       <div className={styles.footerImage}>
         <Image
-          src='/footer_logo.svg'
-          alt='footer Logo'
+          src="/footer_logo.svg"
+          alt="footer Logo"
           width={100}
           height={100}
         />

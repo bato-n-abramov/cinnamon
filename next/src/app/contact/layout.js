@@ -1,12 +1,12 @@
 
 import { Montserrat } from "next/font/google";
-import Header from '@/components/global/header/Header';
-import { globalMock } from '@/mocks/globals';
+import Header from "@/components/global/header/Header";
+import { globalMock } from "@/mocks/globals";
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
     subsets: ["latin"],
-    display: 'swap',
+    display: "swap",
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 

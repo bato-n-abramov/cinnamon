@@ -1,0 +1,63 @@
+.accessBarriers {
+    padding: 125px 0 100px;
+}
+
+.title {
+    margin-bottom: 70px;
+    text-align: center;
+    color: var(--color-deep-teal);
+
+    strong {
+        color: var(--color-amber-glow);
+        font-weight: 600;
+    }
+}
+
+.list {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    border: 2px solid #FFF;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 4px 25px 0 rgba(82, 82, 82, 0.08);
+    backdrop-filter: blur(12.5px);
+    padding: 20px 40px;
+    width: 100%;
+    max-width: 505px;
+    min-height: 175px;
+}
+
+.border {
+    border: 2px solid var(--color-soft-aqua);
+}
+
+.text {
+    color: var(--color-dark-green);
+    font-weight: 400;
+
+    strong {
+        font-weight: 600;
+    }
+}
+
+.icon {
+    width: 72px;
+    height: 72px;
+    max-width: 72px;
+    flex: 1 0 auto;
+    margin: 0 -45px;
+    position: relative;
+    z-index: 1;
+    align-self: center;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}

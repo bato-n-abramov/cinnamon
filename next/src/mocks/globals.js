@@ -16,7 +16,7 @@ export const globalMock = {
         { id: 5, title: "Prior authorization", link: "/prior-authorization" },
         { id: 6, title: "Financial assistance", link: "/financial-assistance" },
         { id: 7, title: "Premier access", link: "/premier-access" },
-        { id: 8, title: "Our story", link: "#" },
+        { id: 8, title: "Our story", link: "/our-story" },
       ],
       header_button: {
         id: 6,
@@ -77,7 +77,7 @@ export const globalMock = {
         {
           "id": 36,
           "title": "Our story",
-          "link": "#"
+          "link": "/our-story"
         }
       ],
       "Menu_2": [

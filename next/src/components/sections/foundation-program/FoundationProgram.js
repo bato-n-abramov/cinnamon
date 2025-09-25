@@ -1,7 +1,7 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
-import styles from './FoundationProgram.module.scss';
+import styles from "./FoundationProgram.module.scss";
 
 export default function FoundationProgram({ data }) {
 
@@ -20,7 +20,7 @@ export default function FoundationProgram({ data }) {
         show: (i = 0) => ({
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, delay: i * 0.2, ease: 'linear' },
+            transition: { duration: 0.6, delay: i * 0.2, ease: "linear" },
         }),
     };
 

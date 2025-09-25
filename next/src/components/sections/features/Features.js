@@ -1,16 +1,16 @@
-'use client';
-import { mediaUrl } from '@/lib/strapi';
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import styles from './Features.module.scss';
+"use client";
+import { mediaUrl } from "@/lib/strapi";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import styles from "./Features.module.scss";
 
 export default function Features({ data }) {
     const { Title, Subtitle, Features_Items = [] } = data || {};
 
     const slideUp = {
         hidden: { opacity: 0, y: 40 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
     };
 
     const itemsContainer = {
@@ -25,7 +25,7 @@ export default function Features({ data }) {
 
     const itemSlide = {
         hidden: { opacity: 0, y: 36 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } }
+        show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } }
     };
 
     return (

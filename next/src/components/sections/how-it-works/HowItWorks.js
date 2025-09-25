@@ -1,11 +1,11 @@
-'use client';
-import Link from 'next/link';
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
-import { mediaUrl } from '@/lib/strapi';
-import { LineOne, LineTwo, LineThree } from '@/components/svg/Lines';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import styles from './HowItWorks.module.scss';
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { mediaUrl } from "@/lib/strapi";
+import { LineOne, LineTwo, LineThree } from "@/components/svg/Lines";
+import { motion } from "framer-motion";
+import styles from "./HowItWorks.module.scss";
 
 export default function HowItWorks({ data }) {
     const { Title, Subtitle, main_content, items_list = [] } = data || {};
@@ -13,18 +13,18 @@ export default function HowItWorks({ data }) {
 
     const circleBig = {
         hidden: { scale: 0, opacity: 0 },
-        show: { scale: 1, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } }
+        show: { scale: 1, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
     };
 
 
     const iconSmall = {
         hidden: { scale: 0, opacity: 0 },
-        show: (i = 0) => ({ scale: 1, opacity: 1, transition: { duration: 0.45, delay: 0.5, ease: 'easeOut' } })
+        show: (i = 0) => ({ scale: 1, opacity: 1, transition: { duration: 0.45, delay: 0.5, ease: "easeOut" } })
     };
 
     const textRight = {
         hidden: { x: 40, opacity: 0 },
-        show: (i = 0) => ({ x: 0, opacity: 1, transition: { duration: 0.5, delay: 1, ease: 'easeOut' } })
+        show: (i = 0) => ({ x: 0, opacity: 1, transition: { duration: 0.5, delay: 1, ease: "easeOut" } })
     };
 
     const slideUp = (delay = 0) => ({
@@ -32,7 +32,7 @@ export default function HowItWorks({ data }) {
         show: {
             y: 0,
             opacity: 1,
-            transition: { duration: 0.6, ease: 'easeOut', delay }
+            transition: { duration: 0.6, ease: "easeOut", delay }
         }
     });
 
@@ -55,7 +55,7 @@ export default function HowItWorks({ data }) {
                 {Subtitle && (
                     <motion.div
                         className={styles.howItWorksSubtitle}
-                         variants={slideUp(0.5)}
+                        variants={slideUp(0.5)}
                     >
                         {Subtitle}
                     </motion.div>
@@ -77,19 +77,19 @@ export default function HowItWorks({ data }) {
                         <div className={styles.list}>
                             {items_list.map((item, i) => {
                                 const iconUrl = item?.Icon?.url ? mediaUrl(item.Icon.url) : null;
-                                const alt = item?.Icon?.alternativeText || 'Icon';
+                                const alt = item?.Icon?.alternativeText || "Icon";
                                 const firstLink = Array.isArray(item?.Link) ? item.Link[0] : item?.Link;
-                                const linkUrl = firstLink?.Link_url || '#';
-                                const linkText = firstLink?.Link_title || '';
-                                const linkTarget = firstLink?.Link_target || '_self';
+                                const linkUrl = firstLink?.Link_url || "#";
+                                const linkText = firstLink?.Link_title || "";
+                                const linkTarget = firstLink?.Link_target || "_self";
 
                                 return (
                                     <div className={styles.item} key={item.id ?? i}>
-                                        {i === 0 && <LineOne className={styles.lineFirst} id='first' />}
-                                        {i === 1 && <LineTwo className={styles.lineSecond} id='second' />}
-                                        {i === 2 && <LineThree className={styles.lineThird} id='third' />}
-                                        {i === 0 && <LineThree className={styles.lineFirstMobile} id='fourth' />}
-                                        {i === 2 && <LineOne className={styles.lineThirdMobile} id='fifth' />}
+                                        {i === 0 && <LineOne className={styles.lineFirst} id="first" />}
+                                        {i === 1 && <LineTwo className={styles.lineSecond} id="second" />}
+                                        {i === 2 && <LineThree className={styles.lineThird} id="third" />}
+                                        {i === 0 && <LineThree className={styles.lineFirstMobile} id="fourth" />}
+                                        {i === 2 && <LineOne className={styles.lineThirdMobile} id="fifth" />}
                                         <motion.div className={styles.itemIcon} variants={iconSmall} custom={i}>
                                             {iconUrl && <div ><Image width={50} height={50} src={iconUrl} alt={alt} /></div>}
                                         </motion.div>
