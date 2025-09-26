@@ -66,6 +66,7 @@ export default function Header({ data }) {
               width={logo.width || 120}
               height={logo.height || 40}
               priority
+              unoptimized
             />
           )}
         </Link>

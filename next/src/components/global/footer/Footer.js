@@ -30,6 +30,7 @@ export default function Footer({ data }) {
                   alt={logo.alternativeText || "Logo"}
                   width={logo.width || 120}
                   height={logo.height || 40}
+                  unoptimized
                 />
               </Link>
             )}
