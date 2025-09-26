@@ -43,7 +43,7 @@ export default function Graphic({ data }) {
       </div>
 
       <motion.div className={styles.graphicImage} variants={fadeIn} onViewportEnter={() => {
-        desktopRef.current?.setSpeed(1.5);
+        desktopRef.current?.setSpeed(2);
         desktopRef.current?.goToAndPlay(0);
       }}>
         {/* {Image?.url && (
