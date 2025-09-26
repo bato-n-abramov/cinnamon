@@ -1,5 +1,10 @@
 .ourStory {
     padding: 125px 0 140px;
+    background: url('/ourStoryBg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    border-radius: 10px;
 }
 
 .inner {

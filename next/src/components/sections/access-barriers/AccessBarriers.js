@@ -32,8 +32,8 @@ export default function AccessBarriers({ data }) {
             variants={container} className={styles.accessBarriers}>
 
             <div className={`${styles.inner} container`}>
-                <h2 className={styles.title}><strong>Where Access </strong>Breaks </h2>
-                <div className={styles.list}>
+                <motion.h2 variants={fadeUp} className={styles.title}><strong>Where Access </strong>Breaks </motion.h2>
+                <motion.div variants={fadeUp} className={styles.list}>
                     <div className={styles.item}>
                         <div className={styles.text}>It happens <strong>when teams juggle</strong> fragmented tools, complex insurance policies, and competing timelines.</div>
                     </div>
@@ -41,7 +41,7 @@ export default function AccessBarriers({ data }) {
                     <div className={`${styles.item} ${styles.border}`}>
                         <div className={styles.text}><strong>Cinnamon</strong> takes an <strong>ecosystem approach aligning health systems, patients, and manufacturers</strong> to reduce auto-denials, lower out-of-pocket exposure, and strengthen adherence.</div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </motion.section>
     );

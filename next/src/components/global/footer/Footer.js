@@ -83,8 +83,8 @@ export default function Footer({ data }) {
         <Image
           src="/footer_logo.svg"
           alt="footer Logo"
-          width={100}
-          height={100}
+          width={500}
+          height={500}
         />
       </div>
     </footer>
