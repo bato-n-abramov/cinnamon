@@ -16,6 +16,9 @@ export default function Footer({ data }) {
 
   return (
     <footer className={styles.footer}>
+      <div className={styles.blob1} aria-hidden />
+      <div className={styles.blob2} aria-hidden />
+      <div className={styles.darkGradient} aria-hidden />
       <div className={`${styles.footerWrapper} container`}>
 
         <div className={styles.footerTop}>

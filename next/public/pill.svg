@@ -1,0 +1,20 @@
+<svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-24" y="-24" width="140" height="140"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(12px);clip-path:url(#bgblur_0_1888_3972_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="24">
+<rect y="92" width="92" height="92" rx="46" transform="rotate(-90 0 92)" fill="#E69138" fill-opacity="0.04"/>
+<rect x="0.5" y="91.5" width="91" height="91" rx="45.5" transform="rotate(-90 0.5 91.5)" stroke="#E69138" stroke-opacity="0.08"/>
+<foreignObject x="-16" y="-16" width="124" height="124"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(12px);clip-path:url(#bgblur_1_1888_3972_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="24">
+<rect x="8" y="84" width="76" height="76" rx="38" transform="rotate(-90 8 84)" fill="#E69138" fill-opacity="0.08"/>
+<rect x="8.5" y="83.5" width="75" height="75" rx="37.5" transform="rotate(-90 8.5 83.5)" stroke="#E69138" stroke-opacity="0.16"/>
+<foreignObject x="-8" y="-8" width="108" height="108"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(12px);clip-path:url(#bgblur_2_1888_3972_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="24">
+<rect x="16" y="76" width="60" height="60" rx="30" transform="rotate(-90 16 76)" fill="#E69138"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31 44C31 36.8203 36.8203 31 44 31C49.6336 31 54.4301 34.5834 56.2348 39.5952C53.952 39.2278 51.5312 39.924 49.7714 41.6839L41.6839 49.7714C39.924 51.5312 39.2278 53.952 39.5952 56.2348C34.5834 54.4301 31 49.6336 31 44ZM43.5361 44.9337C43.7916 45.2828 44.2426 45.428 44.6538 45.2936C45.0649 45.1593 45.3431 44.7757 45.3431 44.3431V36C45.3431 35.4477 44.8953 35 44.3431 35C43.7908 35 43.3431 35.4478 43.3431 36V41.2833L41.057 38.1595C40.7308 37.7138 40.1051 37.6169 39.6594 37.9431C39.2137 38.2692 39.1168 38.8949 39.443 39.3406L43.5361 44.9337Z" fill="#FFFBF7"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M59.2554 42.7445C56.9294 40.4185 53.1581 40.4185 50.832 42.7445L42.7445 50.832C40.4185 53.1581 40.4185 56.9294 42.7445 59.2554C45.0706 61.5815 48.8419 61.5815 51.1679 59.2554L59.2554 51.1679C61.5815 48.8419 61.5815 45.0706 59.2554 42.7445ZM47.4954 48.9096L53.0904 54.5046L49.7537 57.8412C48.2087 59.3862 45.7037 59.3862 44.1587 57.8412C42.6137 56.2962 42.6137 53.7913 44.1587 52.2462L47.4954 48.9096Z" fill="#FFFBF7"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="bgblur_0_1888_3972_clip_path" transform="translate(24 24)"><rect y="92" width="92" height="92" rx="46" transform="rotate(-90 0 92)"/>
+</clipPath><clipPath id="bgblur_1_1888_3972_clip_path" transform="translate(16 16)"><rect x="8" y="84" width="76" height="76" rx="38" transform="rotate(-90 8 84)"/>
+</clipPath><clipPath id="bgblur_2_1888_3972_clip_path" transform="translate(8 8)"><rect x="16" y="76" width="60" height="60" rx="30" transform="rotate(-90 16 76)"/>
+</clipPath></defs>
+</svg>

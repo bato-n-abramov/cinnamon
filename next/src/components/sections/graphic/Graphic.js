@@ -1,11 +1,19 @@
 'use client';
+import { useRef, useEffect } from 'react';
 import { mediaUrl } from '@/lib/strapi';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { motion } from 'framer-motion';
+import Lottie from 'lottie-react';
+import desktopAnim from '@/lottie/desktop.json';
 import styles from './Graphic.module.scss';
 
 export default function Graphic({ data }) {
   const { Title, Subtitle, Image, mobImage } = data;
+  const desktopRef = useRef(null);
+
+  useEffect(() => {
+    desktopRef.current?.setSpeed(1.5);
+  }, []);
 
   const slideUp = {
     hidden: { opacity: 0, y: 40 },
@@ -34,8 +42,11 @@ export default function Graphic({ data }) {
         </motion.div>
       </div>
 
-      <motion.div className={styles.graphicImage} variants={fadeIn}>
-        {Image?.url && (
+      <motion.div className={styles.graphicImage} variants={fadeIn} onViewportEnter={() => {
+        desktopRef.current?.setSpeed(1.5);
+        desktopRef.current?.goToAndPlay(0);
+      }}>
+        {/* {Image?.url && (
           <img
             src={mediaUrl(Image.url)}
             alt={Image.alternativeText || 'Image'}
@@ -43,7 +54,16 @@ export default function Graphic({ data }) {
             height={Image.height || 40}
             className={styles.desktop}
           />
-        )}
+        )} */}
+
+        <Lottie
+          lottieRef={desktopRef}
+          animationData={desktopAnim}
+          autoplay={false}
+          loop={false}
+
+          className={`${styles.lottie} ${styles.desktop}`}
+        />
 
         {mobImage?.url && (
           <img

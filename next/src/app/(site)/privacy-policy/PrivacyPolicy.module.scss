@@ -1,0 +1,35 @@
+.privacy {
+    padding: 80px 0;
+    color: var(--color-dark-green);
+
+    @media (max-width: 1025px) {
+        padding: 20px 0;
+    }
+}
+
+.privacy h1,
+.privacy h2,
+.privacy h3,
+.privacy h4,
+.privacy h5,
+.privacy h6 {
+    margin: 20px 0;
+}
+
+.privacy p {
+    margin: 10px 0;
+    line-height: 1.37;
+}
+
+.privacy ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.privacy li {
+    margin-bottom: 10px;
+}
+
+.privacy a {
+    text-decoration: underline;
+}

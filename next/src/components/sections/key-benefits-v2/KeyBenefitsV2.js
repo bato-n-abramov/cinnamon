@@ -1,9 +1,10 @@
 'use client';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
-import styles from './KeyBenefits.module.scss';
+import styles from './KeyBenefitsV2.module.scss';
 
-export default function KeyBenefits({ data, ref }) {
+
+export default function KeyBenefitsV2({ data, ref }) {
 
     const reduce = useReducedMotion();
 
@@ -56,17 +57,20 @@ export default function KeyBenefits({ data, ref }) {
                 </div>
             </div>
             <div className={styles.imageContent}>
-                <Image src={'/keyBenefits.png'} alt="Key Benefits" width={1200} height={500} />
+                <Image src={"/keyBenefitsV2.svg"} alt="Key Benefits" width={1200} height={500} />
                 <div className={`${styles.contentInner} container`}>
                     <motion.h2 variants={fadeUp} custom={1} className={styles.imageContentTitle}>Higher Accuracy</motion.h2>
                     <div className={styles.list}>
                         <motion.div variants={fadeUp} custom={3} className={styles.item}>
+                            <div className={styles.icon}><Image src={"/target.svg"} alt="target" width={1200} height={500} /></div>
                             <div className={styles.itemText}><strong>Prior Authorization AI</strong> matches payer requirements with &gt;98% accuracy.</div>
                         </motion.div>
                         <motion.div variants={fadeUp} custom={4} className={styles.item}>
+                            <div className={styles.icon}><Image src={"/list.svg"} alt="list" width={1200} height={500} /></div>
                             <div className={styles.itemText}>Dynamic, plan-specific questions ensure <strong>the right details</strong> every time.</div>
                         </motion.div>
                         <motion.div variants={fadeUp} custom={5} className={styles.item}>
+                            <div className={styles.icon}><Image src={"/certificate.svg"} alt="certificate" width={1200} height={500} /></div>
                             <div className={styles.itemText}><strong>Automated validation</strong> prevents errors that lead to denials.</div>
                         </motion.div>
                     </div>

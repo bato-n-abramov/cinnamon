@@ -31,9 +31,8 @@ export default function OurStory({ data }) {
                     <div className={styles.lineWrapper}>
                         <StoryLine />
                     </div>
-
-                    <div className={`${styles.item} ${styles.itemImage}`}>
-                        <FadeIn>
+                    <FadeIn>
+                        <div className={`${styles.item} ${styles.itemImage}`}>
                             <div className={styles.textContent}>
                                 <div className={`${styles.tag} ${styles.tagRight}`}>
                                     How a Partnership of Trust Was Built
@@ -41,24 +40,24 @@ export default function OurStory({ data }) {
                                         <Point />
                                     </div>
                                 </div>
+                                <div className={styles.imageMob}>
+                                    <Image src="/ourStory1.png" width={400} height={400} alt="Cinnamon" />
+                                </div>
                                 <div className={styles.text}>
                                     The journey began with their first customer, <strong>UC Health - Cincinnati</strong>. The buyer&apos;s demand was clear: a risk-free solution that worked. This partnership became the crucible for Cinnamon&apos;s product development.<br /><br />
                                     Working closely with UC Health, Eric and Bryan gathered critical marketing requirements, refining their platform into what would become the industry&apos;s gold standard. <br /><br />
                                     <strong>A solution that prioritized patient access</strong>, streamlined prior authorization, and boosted adherence, all while eliminating financial friction for health systems.
                                 </div>
                             </div>
-                        </FadeIn>
-                        <FadeIn>
                             <div className={styles.imageWrapper}>
                                 <div className={styles.image}>
                                     <Image src="/ourStory1.png" width={400} height={400} alt="Cinnamon" />
                                 </div>
                             </div>
-                        </FadeIn>
-                    </div>
-
-                    <div className={`${styles.item} ${styles.itemImage} ${styles.reverse}`}>
-                        <FadeIn>
+                        </div>
+                    </FadeIn>
+                    <FadeIn>
+                        <div className={`${styles.item} ${styles.itemImage} ${styles.reverse}`}>
                             <div className={styles.textContent}>
                                 <div className={`${styles.tag} ${styles.tagLeft}`}>
                                     Where Wisdom Meets Innovation
@@ -66,22 +65,22 @@ export default function OurStory({ data }) {
                                         <Point />
                                     </div>
                                 </div>
+                                <div className={styles.imageMob}><Image src="/ourStory2.png" width={400} height={400} alt="Cinnamon" /></div>
+
                                 <div className={styles.text}>
                                     <strong>In that pivotal first year</strong>, a chance meeting with Angelo Campano, a 20-year veteran in EHR-marketing, changed the game. <br /><br />
                                     Angelo&apos;s expertise in what pharmaceutical brands needed: seamless prior authorization, robust patient access, and sustained adherence guided Cinnamon&apos;s strategic evolution.  <br /><br />
                                     Recognizing his value, Eric and Bryan brought Angelo on as a strategic advisor, forging a powerful distribution partnership with his company, Flora. <strong>This collaboration unlocked new doors</strong>, aligning Cinnamon&apos;s offerings with the precise needs of pharmaceutical giants.
                                 </div>
                             </div>
-                        </FadeIn>
-                        <FadeIn>
                             <div className={styles.imageWrapper}>
                                 <div className={styles.image}><Image src="/ourStory2.png" width={400} height={400} alt="Cinnamon" /></div>
                             </div>
-                        </FadeIn>
-                    </div>
+                        </div>
+                    </FadeIn>
 
-                    <div className={`${styles.item} ${styles.itemImage}`}>
-                        <FadeIn>
+                    <FadeIn>
+                        <div className={`${styles.item} ${styles.itemImage}`}>
                             <div className={styles.textContent}>
                                 <div className={`${styles.tag} ${styles.tagRight}`}>
                                     How We Grew Together
@@ -89,21 +88,22 @@ export default function OurStory({ data }) {
                                         <Point />
                                     </div>
                                 </div>
+                                <div className={styles.imageMob}>
+                                    <Image src="/ourStory3.png" width={400} height={400} alt="Cinnamon" />
+                                </div>
                                 <div className={styles.text}>
                                     Today, Cinnamon stands tall. Its no-cost model and unmatched value proposition have fueled rapid expansion, earning partnerships with <strong>the largest health systems across the United States.</strong><br /><br />
                                     Simultaneously, Cinnamon&apos;s Premier Access program has attracted over 54 pharmaceutical brands, with more joining as the platform&apos;s reputation grows.  <br /><br />
                                     By focusing on shared success, Cinnamon has turned a fragmented industry <strong>into a unified ecosystem.</strong>
                                 </div>
                             </div>
-                        </FadeIn>
-                        <FadeIn>
                             <div className={styles.imageWrapper}>
                                 <div className={styles.image}>
                                     <Image src="/ourStory3.png" width={400} height={400} alt="Cinnamon" />
                                 </div>
                             </div>
-                        </FadeIn>
-                    </div>
+                        </div>
+                    </FadeIn>
                 </div>
 
                 <FadeIn>

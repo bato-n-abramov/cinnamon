@@ -84,12 +84,12 @@ export const globalMock = {
         {
           "id": 37,
           "title": "Privacy Policy",
-          "link": "#"
+          "link": "/privacy-policy"
         },
         {
           "id": 38,
           "title": "Terms of service",
-          "link": "#"
+          "link": "terms-of-use"
         }
       ],
       "Images": [
