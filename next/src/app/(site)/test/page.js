@@ -6,6 +6,9 @@ import ImageTextV3 from "@/components/sections/image-text-v3/ImageTextV3";
 import CostBurnoutV2 from "@/components/sections/cost-burnout-v2/CostBurnoutV2";
 import ImpactV2 from "@/components/sections/impact-v2/ImpactV2";
 import AssistanceBenefitsV2 from "@/components/sections/assistance-benefits-v2/AssistanceBenefitsV2";
+import FoundationProgramV2 from "@/components/sections/foundation-program-v2/FoundationProgramV2";
+import ImageList from "@/components/sections/image-list/ImageList";
+
 export default function TestPage() {
 
     const costBurnoutData = {
@@ -22,6 +25,8 @@ export default function TestPage() {
             <CostBurnoutV2 data={costBurnoutData} />
             <ImpactV2 />
             <AssistanceBenefitsV2 />
+            <FoundationProgramV2 />
+            <ImageList />
         </main>
     );
 }
