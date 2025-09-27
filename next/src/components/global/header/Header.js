@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import { usePathname } from "next/navigation";
@@ -14,6 +14,10 @@ export default function Header({ data }) {
 
 
   const [isOpen, setIsOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [atTop, setAtTop] = useState(true);
+  const lastY = useRef(0);
+  const ticking = useRef(false);
   const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -39,6 +43,38 @@ export default function Header({ data }) {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const THRESHOLD = 8;
+    const SHOW_AFTER = 64;
+
+    const onScroll = () => {
+      if (ticking.current) return;
+      ticking.current = true;
+
+      requestAnimationFrame(() => {
+        const y = Math.max(0, window.scrollY || 0);
+        const diff = y - (lastY.current || 0);
+
+        setAtTop(y < 4);
+
+        if (!isOpen) {
+          if (Math.abs(diff) > THRESHOLD) {
+            if (diff > 0 && y > SHOW_AFTER) setHidden(true);
+            else setHidden(false);
+          }
+        } else {
+          setHidden(false);
+        }
+
+        lastY.current = y;
+        ticking.current = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isOpen]);
+
   const renderNavLink = (item) => {
     const href = item.link || "#";
     const label = item.title || href;
@@ -56,7 +92,11 @@ export default function Header({ data }) {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={[
+      styles.header,
+      hidden ? styles.headerHidden : "",
+      !atTop ? styles.headerScrolled : "",
+    ].join(" ")}>
       <div className={`${styles.headerInner}`}>
         <Link className={styles.headerLogo} href="/">
           {logo?.url && (
