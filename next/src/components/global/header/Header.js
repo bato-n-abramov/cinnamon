@@ -98,7 +98,7 @@ export default function Header({ data }) {
       !atTop ? styles.headerScrolled : "",
     ].join(" ")}>
       <div className={`${styles.headerInner}`}>
-        <Link className={styles.headerLogo} href="/">
+        <Link className={styles.headerLogo} href="/" onClick={() => setIsOpen(false)}>
           {logo?.url && (
             <Image
               src={mediaUrl(logo.url)}

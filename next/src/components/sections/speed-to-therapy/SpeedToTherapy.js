@@ -24,7 +24,7 @@ export default function SpeedToTherapy({ data }) {
             transition: { duration: 0.6, delay: i * 0.2, ease: 'linear' },
         }),
     };
-    
+
     return (
         <motion.section className={styles.SpeedToTherapy}
             initial="hidden"
@@ -54,7 +54,7 @@ export default function SpeedToTherapy({ data }) {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.5 }} className={styles.decor}><Image src={'/decor2.svg'} width={10} height={10} alt='decor' /></motion.div>
-                    <motion.div variants={fadeUp} custom={4} className={styles.item}>
+                    <motion.div variants={fadeUp} custom={2} className={styles.item}>
                         <div className={styles.itemIcon}>
                             <Image src={'/item3.svg'} alt="Speed To Therapy" width={160} height={160} />
                         </div>

@@ -29,7 +29,7 @@ export default function CoverageWaterfall({ data }) {
             initial="hidden"
             whileInView="show"
             variants={container}
-            viewport={{ once: true, amount: 0.5 }}>
+            viewport={{ once: true, amount: 0.2 }}>
             <div className={`${styles.inner} container`}>
                 <motion.div variants={fadeUp} custom={0} className={styles.tag}>The fastest path to “covered”</motion.div>
                 <motion.h2 variants={fadeUp} custom={1} className={styles.title}>Coverage <strong>Waterfall</strong></motion.h2>

@@ -28,7 +28,7 @@ export const homepageMock = {
       CTA: {
         id: 21,
         text: "Learn More",
-        URL: "#",
+        URL: "/contact",
         target: "_self",
       },
     },

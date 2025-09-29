@@ -29,6 +29,10 @@
     max-width: 530px;
     text-transform: capitalize;
 
+    @media (max-width: 768px) {
+        margin-bottom: 70px;
+    }
+
     strong {
         color: var(--color-amber-glow);
         font-weight: 600;
@@ -49,7 +53,9 @@
     overflow: hidden;
 
     @media (max-width: 1025px) {
-        padding-top: 100px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        gap: 60px;
     }
 }
 
@@ -69,6 +75,10 @@
 
 .itemFirst {
     margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 0;
+    }
 }
 
 
@@ -86,8 +96,7 @@
     text-align: center;
 
     @media (max-width: 1025px) {
-        max-width: 100%;
-        margin-bottom: 20px;
+        align-self: center;
     }
 
     @media (max-width: 768px) {
@@ -121,6 +130,9 @@
 
 
 .textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     width: 100%;
     max-width: 530px;
 
@@ -131,7 +143,6 @@
 
 .tagLeft {
     background: linear-gradient(90deg, #00696E 0%, #31A3A7 50%, #8FCAC5 100%);
-    margin-bottom: 30px;
 
     &::after {
         content: "";
@@ -154,7 +165,6 @@
 
 .tagRight {
     background: linear-gradient(90deg, #8FCAC5 0%, #31A3A7 50%, #00696E 100%);
-    margin-bottom: 30px;
 
         &::after {
         content: "";

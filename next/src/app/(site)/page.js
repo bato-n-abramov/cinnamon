@@ -86,7 +86,7 @@ const heroData = {
   CTA: {
     id: 21,
     text: "Learn More",
-    URL: "#",
+    URL: "/contact",
     target: "_self",
   },
 }
@@ -184,7 +184,7 @@ const HowItWorksData = {
       },
       "Link": {
         "id": 5,
-        "Link_url": "#",
+        "Link_url": "/contact",
         "Link_title": "Learn More",
         "Link_target": "_self"
       }
@@ -216,7 +216,7 @@ const HowItWorksData = {
       },
       "Link": {
         "id": 5,
-        "Link_url": "#",
+        "Link_url": "/contact",
         "Link_title": "Learn More",
         "Link_target": "_self"
       }

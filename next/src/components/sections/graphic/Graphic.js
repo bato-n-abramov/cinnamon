@@ -1,19 +1,18 @@
 'use client';
-import { useRef, useEffect } from 'react';
-import { mediaUrl } from '@/lib/strapi';
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
-import { motion } from 'framer-motion';
-import Lottie from 'lottie-react';
-import desktopAnim from '@/lottie/desktop.json';
-import styles from './Graphic.module.scss';
+import { useRef, useEffect } from "react";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import desktopAnim from "@/lottie/desktop.json";
+import mobileAnim from "@/lottie/mobile.json";
+import styles from "./Graphic.module.scss";
 
 export default function Graphic({ data }) {
-  const { Title, Subtitle, Image, mobImage } = data;
-  const desktopRef = useRef(null);
+  const { Title, Subtitle } = data;
 
-  useEffect(() => {
-    desktopRef.current?.setSpeed(1.5);
-  }, []);
+  const desktopRef = useRef(null);
+  const mobileRef = useRef(null);
+
 
   const slideUp = {
     hidden: { opacity: 0, y: 40 },
@@ -45,17 +44,9 @@ export default function Graphic({ data }) {
       <motion.div className={styles.graphicImage} variants={fadeIn} onViewportEnter={() => {
         desktopRef.current?.setSpeed(2);
         desktopRef.current?.goToAndPlay(0);
+        mobileRef.current?.setSpeed(2);
+        mobileRef.current?.goToAndPlay(0);
       }}>
-        {/* {Image?.url && (
-          <img
-            src={mediaUrl(Image.url)}
-            alt={Image.alternativeText || 'Image'}
-            width={Image.width || 120}
-            height={Image.height || 40}
-            className={styles.desktop}
-          />
-        )} */}
-
         <Lottie
           lottieRef={desktopRef}
           animationData={desktopAnim}
@@ -65,15 +56,13 @@ export default function Graphic({ data }) {
           className={`${styles.lottie} ${styles.desktop}`}
         />
 
-        {mobImage?.url && (
-          <img
-            src={mediaUrl(mobImage.url)}
-            alt={mobImage.alternativeText || 'Image'}
-            width={mobImage.width || 120}
-            height={mobImage.height || 40}
-            className={styles.mob}
-          />
-        )}
+        <Lottie
+          lottieRef={mobileRef}
+          animationData={mobileAnim}
+          autoplay={false}
+          loop={false}
+          className={`${styles.lottie} ${styles.mobile}`}
+        />
       </motion.div>
     </motion.section>
   );

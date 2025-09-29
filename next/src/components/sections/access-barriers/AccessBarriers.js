@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import styles from "./AccessBarriers.module.scss";
+import Image from "next/image";
 import { FloatArrow } from "@/components/global/icons/FloatArrow";
 export default function AccessBarriers({ data }) {
 
@@ -37,7 +38,7 @@ export default function AccessBarriers({ data }) {
                     <div className={styles.item}>
                         <div className={styles.text}>It happens <strong>when teams juggle</strong> fragmented tools, complex insurance policies, and competing timelines.</div>
                     </div>
-                    <div className={styles.icon}><FloatArrow /></div>
+                    <div className={styles.icon}><Image src={"/arrow-float.png"} width={500} height={500} alt="arrow" /></div>
                     <div className={`${styles.item} ${styles.border}`}>
                         <div className={styles.text}><strong>Cinnamon</strong> takes an <strong>ecosystem approach aligning health systems, patients, and manufacturers</strong> to reduce auto-denials, lower out-of-pocket exposure, and strengthen adherence.</div>
                     </div>

@@ -3,6 +3,7 @@ import { useRef } from "react";
 
 import HeroV2 from "@/components/sections/hero-v2/HeroV2";
 import ProductOverview from "@/components/sections/product-overview/ProductOverview";
+import WhyPremierAccess from "@/components/sections/why-premier-access/WhyPremierAccess";
 
 export default function PremierAccessPage() {
     const nextSectionRef = useRef(null);
@@ -20,7 +21,8 @@ export default function PremierAccessPage() {
     return (
         <main>
             <HeroV2 data={heroData} scrollTargetRef={nextSectionRef} />
-            <ProductOverview />
+            {/* <ProductOverview /> */}
+            <WhyPremierAccess />
         </main>
     );
 }

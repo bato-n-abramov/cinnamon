@@ -40,7 +40,7 @@ export default function KeyBenefits({ data, ref }) {
         <motion.section className={styles.KeyBenefits} ref={ref}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={container}>
             <div className={`${styles.inner} container`}>
                 <div className={styles.textContent}>

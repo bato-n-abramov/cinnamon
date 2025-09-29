@@ -41,7 +41,7 @@ export default function GovernmentAssistance({ data }) {
         <motion.section
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={container}
             className={styles.governmentAssistance}>
             <div className={`container ${styles.inner}`}>

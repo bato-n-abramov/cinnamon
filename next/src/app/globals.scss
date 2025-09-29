@@ -45,6 +45,7 @@ body {
 
 .pageWrapper {
   padding: 15px;
+  overflow: hidden;
 
   @media (max-width: 1025px) {
     padding: 10px;

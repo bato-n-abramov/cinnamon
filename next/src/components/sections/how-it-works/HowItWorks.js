@@ -41,7 +41,7 @@ export default function HowItWorks({ data }) {
             className={styles.howItWorks}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
         >
             <div className={`${styles.howItWorksWrapper} container`}>
                 {Array.isArray(Title) && Title.length > 0 && (
