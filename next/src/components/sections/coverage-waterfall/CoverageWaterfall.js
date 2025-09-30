@@ -37,7 +37,10 @@ export default function CoverageWaterfall({ data }) {
                 <motion.div variants={fadeUp} custom={3} className={styles.image}>
                     <Image width={100} height={100} src="/coverageWaterfall.svg" alt="Coverage Waterfall" />
                 </motion.div>
-                <motion.div variants={fadeUp} custom={4} className={styles.quote}>The result is an actionable worklist for your staff with eligibility, matching opportunities, and next steps you can assign and filter by drug, diagnosis, site, or program type. Instant, accurate, traceable.</motion.div>
+                <motion.div variants={fadeUp} custom={4} className={styles.quote}>
+                    <div className={styles.icon}><Image src={"/arrow-float.png"} width={500} height={500} alt="arrow" /></div>
+                    <strong>The result</strong> is an actionable worklist for your staff with eligibility, matching opportunities, and next steps you can assign and filter by drug, diagnosis, site, or program type. Instant, accurate, traceable.
+                </motion.div>
             </div>
         </motion.section>
     );

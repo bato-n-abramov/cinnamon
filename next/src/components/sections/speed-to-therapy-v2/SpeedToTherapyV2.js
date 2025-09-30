@@ -30,9 +30,9 @@ export default function SpeedToTherapyV2({ data }) {
             initial="hidden"
             whileInView="show"
             variants={container}
-            viewport={{ once: true, amount: 0.5 }}>
+            viewport={{ once: true, amount: 0.2 }}>
             <div className={`${styles.inner} container`}>
-                <motion.h2 variants={fadeUp} custom={0} className={styles.title}>Faster Speed <strong>to Therapy</strong></motion.h2>
+                <motion.h2 variants={fadeUp} custom={0} className={styles.title}><strong>Faster Speed </strong>To Therapy</motion.h2>
                 <div className={styles.list}>
                     <motion.div variants={fadeUp} className={styles.item}>
                         <div className={styles.itemIcon}>

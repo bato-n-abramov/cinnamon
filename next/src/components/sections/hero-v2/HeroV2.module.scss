@@ -1,18 +1,23 @@
 .heroV2 {
     position: relative;
-    background: #FFF0DE;
-    color: #fff;
-    padding: 240px 0 50px;
+    background: #ffdcb0;
+    padding: 260px 0 50px;
     margin-top: -104px;
     border-radius: 10px;
     overflow: hidden;
     isolation: isolate;
     height: 680px;
+    background-image: url("/frame.png");
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
 
     @media (max-width: 768px) {
         padding: 180px 0 45px;
         border-radius: 16px;
         height: auto;
+        min-height: 650px;
+        background-image: url("/frame_mob.png");
     }
 }
 
@@ -52,6 +57,10 @@
     color: var(--color-dark-green);
     font-weight: 400;
     line-height: 1.37;
+
+    strong {
+        font-weight: 600;
+    }
 }
 
 
@@ -115,6 +124,11 @@
 
     --sx: 0;
     --sy: 0;
+
+    @media (max-width: 768px) {
+        --w: 250px;
+        --h: 250px;
+    }
 
 
     left: calc(var(--sx) * (100% - var(--w)));

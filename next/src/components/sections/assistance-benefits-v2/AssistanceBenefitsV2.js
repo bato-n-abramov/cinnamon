@@ -28,7 +28,7 @@ export default function AssistanceBenefitsV2({ data, ref }) {
         <motion.section
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={container} className={styles.assistanceBenefits} ref={ref}>
             <div className={`container ${styles.inner}`}>
                 <motion.div variants={fadeUp} custom={0} className={styles.tag}>Rules vary. Funds move. Cinnamon keeps pace.</motion.div>
