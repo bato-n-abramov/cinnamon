@@ -29,9 +29,8 @@ export default function HigherAccuracy({ data }) {
             initial="hidden"
             whileInView="show"
             className={styles.higherAccuracy}
-            viewport={{ once: true, amount: 0.5 }} className={styles.higherAccuracy}>
+            viewport={{ once: true, amount: 0.5 }}>
             <div className={styles.imageContent}>
-                {/* <Image src={"/keyBenefitsV2.svg"} alt="Key Benefits" width={1200} height={500} /> */}
                 <div className={`${styles.contentInner} container`}>
                     <motion.h2 variants={fadeUp} custom={1} className={styles.imageContentTitle}>Higher Accuracy</motion.h2>
                     <div className={styles.list}>
