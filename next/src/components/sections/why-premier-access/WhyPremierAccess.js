@@ -82,7 +82,7 @@ export default function WhyPremierAccess({ data }) {
                     animate="show"
                     custom={5}>
                     <a
-                        href="#"
+                        href="/contact"
                         className={`${styles.link} button-icon`}
                     >
                         <span className='button-icon-text'>Talk to our team</span>

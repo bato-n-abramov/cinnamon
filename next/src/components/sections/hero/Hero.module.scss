@@ -7,10 +7,15 @@
   border-radius: 10px;
   overflow: hidden;
   isolation: isolate;
+  background-image: url("/frame.png");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
 
   @media (max-width: 768px) {
     padding: 180px 0 45px;
     border-radius: 16px;
+    background-image: url("/frame_mob.png");
   }
 }
 
