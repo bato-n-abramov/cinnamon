@@ -1,7 +1,10 @@
-"use client";
-
 import styles from "./PrivacyPolicy.module.scss";
 
+
+export const metadata = {
+    title: "Privacy Policy | Cinnamon Health",
+
+};
 export default function PrivacyPolicyPage() {
 
 

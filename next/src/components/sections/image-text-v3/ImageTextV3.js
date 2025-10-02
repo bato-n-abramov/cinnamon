@@ -40,7 +40,7 @@ export default function ImageTextV3({ data }) {
                     <div className={styles.text}>
                         <ul>
                             <li>Complete, accurate submissions drive significantly <strong>higher approval rates</strong>
-                                <div className={styles.itemDecor}><Image src={"/imageTextDecor.svg"} width={50} height={50} alt="Decor" /></div>
+                                <div className={styles.itemDecor}><Image src={"/Floating-icons.png"} width={50} height={50} alt="Decor" /></div>
                             </li>
                             <li><strong>Predictive analytics</strong> keep pace with constantly changing payer rules</li>
                             <li>Smart resubmission workflows <strong>accelerate appeals and reduce delays</strong></li>

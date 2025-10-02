@@ -500,6 +500,10 @@ const costBurnoutData = {
   items: ['<strong>Real-time connection</strong> to the health-system EHR', '<strong>FHIR-based pipelines</strong> for EHR data requests', '<strong>Coverage Waterfall</strong> that benefits health systems and patients']
 }
 
+export const metadata = {
+  title: "Cinnamon Health",
+};
+
 export default async function Home() {
   // const page = await getHomepage();
   // const page = homepageMock;

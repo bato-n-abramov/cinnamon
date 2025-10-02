@@ -59,7 +59,8 @@ export default function ContactForm() {
 
             setStatus("ok");
             resetForm();
-            recaptchaRef.current?.reset();
+
+
         } catch (e) {
             console.error(e);
             setStatus("error");
@@ -91,11 +92,12 @@ export default function ContactForm() {
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <label htmlFor="fullName">Full name*</label>
-                                <Field id="fullName" name="fullName">
+                                <Field name="fullName">
                                     {({ field, form }) => (
                                         <input
                                             {...field}
                                             type='text'
+                                            id="fullName"
                                             placeholder="Enter your full name"
                                             className={`${styles.input} ${form.values.fullName ? "filled" : ""
                                                 }`}
@@ -106,11 +108,12 @@ export default function ContactForm() {
                             </div>
                             <div className={styles.col}>
                                 <label htmlFor="email">Work email*</label>
-                                <Field id="email" name="email" >
+                                <Field name="email" >
                                     {({ field, form }) => (
                                         <input
                                             {...field}
                                             type="email"
+                                            id="email"
                                             placeholder="Enter your work email"
                                             className={`${form.values.email ? "filled" : ""
                                                 }`}
@@ -124,11 +127,12 @@ export default function ContactForm() {
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <label htmlFor="org">Organization*</label>
-                                <Field id="org" name="org">
+                                <Field name="org">
                                     {({ field, form }) => (
                                         <input
                                             {...field}
                                             type="text"
+                                            id="org"
                                             placeholder="Enter your organization"
                                             className={`${form.values.org ? "filled" : ""
                                                 }`}
@@ -147,11 +151,12 @@ export default function ContactForm() {
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <label htmlFor="title">Job title*</label>
-                                <Field id="title" name="title">
+                                <Field name="title">
                                     {({ field, form }) => (
                                         <input
                                             {...field}
                                             type="text"
+                                            id="title"
                                             placeholder="Enter your job title"
                                             className={`${form.values.title ? "filled" : ""
                                                 }`}
@@ -165,11 +170,12 @@ export default function ContactForm() {
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <label htmlFor="goals">Your goals*</label>
-                                <Field id="goals" name="goals" >
+                                <Field name="goals" >
                                     {({ field, form }) => (
                                         <input
                                             {...field}
                                             type="text"
+                                            id="goals"
                                             placeholder="Enter your goals / context"
                                             className={`${form.values.goals ? "filled" : ""
                                                 }`}
@@ -183,10 +189,11 @@ export default function ContactForm() {
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <label htmlFor="how">How did you hear about us? (optional)</label>
-                                <Field id="how" name="how" rows={3}  >
+                                <Field name="how" rows={3}  >
                                     {({ field, form }) => (
                                         <textarea
                                             {...field}
+                                            id="how"
                                             placeholder="How did you hear about us?"
                                             className={`${form.values.how ? "filled" : ""
                                                 }`}
@@ -202,6 +209,7 @@ export default function ContactForm() {
                                     ref={recaptchaRef}
                                     sitekey={siteKey}
                                     onChange={(token) => setFieldValue("captcha", token)}
+                                    aria-label="Verify you are not a robot"
                                 />
                                 <ErrorMessage name="captcha" component="span" className={styles.err} />
                             </div>

@@ -39,8 +39,6 @@
 
 .list {
     display: flex;
-    align-items: flex-start;
-    align-items: center;
 
     @media (max-width: 768px) {
         flex-direction: column;
@@ -85,6 +83,7 @@
     border: 1px solid rgba(230, 145, 56, 0.24);
     background: rgba(230, 145, 56, 0.24);
     backdrop-filter: blur(12px);
+    align-self: center;
 
     @media (max-width: 768px) {
        transform: rotate(90deg);

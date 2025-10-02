@@ -32,7 +32,7 @@ export default function FoundationProgramV2({ data }) {
             initial="hidden"
             whileInView="show"
             variants={container}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
         >
             <div className={`${styles.inner} container`}>
                 <motion.div variants={fadeUp} custom={0} className={styles.tag}>Financial assistance embedded in your workflow</motion.div>
@@ -44,11 +44,11 @@ export default function FoundationProgramV2({ data }) {
                     <motion.div className={`${styles.item} ${styles.itemImage}`} variants={fadeUp} custom={1}>
                         <Image src={'/foundationProgram.png'} alt="foundationProgram" width={300} height={300} />
                     </motion.div>
-                    <motion.div className={styles.item} variants={fadeUp} custom={2}>
+                    <motion.div className={styles.item} variants={fadeUp} custom={3}>
                         <Shield />
                         <div className={styles.itemText}><strong>Nonprofit foundations deliver</strong> targeted aid for underinsured patients, but funds open and close fast and eligibility is rigid.</div>
                     </motion.div>
-                    <motion.div variants={fadeUp} custom={3} className={styles.item}>
+                    <motion.div variants={fadeUp} custom={4} className={styles.item}>
                         <Heart />
                         <div className={styles.itemText}>Cinnamon monitors program availability by disease, matches eligible patients from EHR signals, and alerts your team to enroll. <strong>Quickly and compliantly.</strong></div>
                     </motion.div>

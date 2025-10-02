@@ -73,11 +73,17 @@
                 font-weight: 600;
             }
 
-            svg {
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 28px;
                 height: 28px;
                 max-width: 28px;
                 flex: 1 0 auto;
+                border-radius: 100%;
+                background: rgba(0, 105, 110, 0.40);
+                backdrop-filter: blur(12px);
             }
         }
     }
