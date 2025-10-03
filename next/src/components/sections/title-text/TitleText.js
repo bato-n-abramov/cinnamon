@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import styles from "./TitleText.module.scss";
 
 export default function TitleText({ data }) {
@@ -44,6 +45,9 @@ export default function TitleText({ data }) {
 
         <motion.div className={styles.right} variants={fromRight}>
           <div dangerouslySetInnerHTML={{ __html: text }} ></div>
+        </motion.div>
+        <motion.div variants={fromLeft} className={styles.imageWrapper}>
+          <div className={styles.image}><Image src={"/titleText.png"} width={700} height={700} alt={"image"} /></div>
         </motion.div>
       </div>
     </motion.section>

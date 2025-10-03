@@ -31,7 +31,7 @@ export default function ImageList() {
                 <div className={styles.text}>Co-pay programs can slash out-of-pocket costs, but they’re easy to miss.</div>
                 <div className={styles.content}>
                     <div className={styles.image}>
-                        <Image src={"/imageList.png"} width={445} height={642} alt={"image"} />
+                        <Image src={"/imageList.png"} width={700} height={700} alt={"image"} />
                     </div>
                     <div className={styles.textContent}>
                         <p className={styles.subtitle}>Cinnamon does the heavy lifting:</p>

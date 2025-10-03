@@ -48,7 +48,7 @@ export default function ImageTextV2() {
                     </div>
                 </motion.div>
                 <motion.div variants={fromRight} className={styles.image}>
-                    <Image src={'/image-textv2.png'} alt="Image Text" width={500} height={500} />
+                    <Image src={'/image-textv2.png'} alt="Image Text" width={700} height={700} />
                 </motion.div>
             </div>
         </motion.section>

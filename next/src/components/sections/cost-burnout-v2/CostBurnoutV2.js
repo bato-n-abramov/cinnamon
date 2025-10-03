@@ -35,7 +35,7 @@ export default function CostBurnoutV2({ data }) {
             variants={container}>
             <div className={`${styles.inner} container`}>
                 <motion.div variants={fromLeft} className={styles.image}>
-                    <Image src={data.image} width={200} height={200} alt="decor" />
+                    <Image src={data.image} width={700} height={700} alt="decor" />
                 </motion.div>
                 <motion.div variants={fromRight} className={styles.textContent}>
                     <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: data.title }}></h2>

@@ -41,7 +41,7 @@ export default function OurStory({ data }) {
                                     </div>
                                 </div>
                                 <div className={styles.imageMob}>
-                                    <Image src="/ourStory1.png" width={400} height={400} alt="Cinnamon" />
+                                    <Image src="/ourStory1.png" width={700} height={700} alt="Cinnamon" />
                                 </div>
                                 <div className={styles.text}>
                                     The journey began with their first customer, <strong>UC Health - Cincinnati</strong>. The buyer&apos;s demand was clear: a risk-free solution that worked. This partnership became the crucible for Cinnamon&apos;s product development.<br /><br />

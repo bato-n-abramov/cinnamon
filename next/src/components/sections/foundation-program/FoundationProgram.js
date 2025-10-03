@@ -43,7 +43,7 @@ export default function FoundationProgram() {
                 </motion.div>
                 <div className={styles.list}>
                     <motion.div className={`${styles.item} ${styles.itemImage}`} variants={fadeUp} custom={1}>
-                        <Image src={'/foundationProgram.png'} alt="foundationProgram" width={300} height={300} />
+                        <Image src={'/foundationProgram.png'} alt="foundationProgram" width={700} height={700} />
                     </motion.div>
                     <motion.div className={styles.item} variants={fadeUp} custom={3}>
                         <Shield />
