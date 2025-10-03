@@ -1,8 +1,9 @@
-'use client';
-import Image from 'next/image';
-import { mediaUrl } from '@/lib/strapi';
-import { motion } from 'framer-motion';
-import styles from './Logos.module.scss';
+"use client";
+
+import Image from "next/image";
+import { mediaUrl } from "@/lib/strapi";
+import { motion } from "framer-motion";
+import styles from "./Logos.module.scss";
 
 export default function Logos({ data, speed = 30 }) {
   const { Title, Images } = data || {};

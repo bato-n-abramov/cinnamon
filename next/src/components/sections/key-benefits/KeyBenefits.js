@@ -1,11 +1,9 @@
-'use client';
-import Image from 'next/image';
-import { motion, useReducedMotion } from 'framer-motion';
-import styles from './KeyBenefits.module.scss';
+"use client";
 
-export default function KeyBenefits({ data, ref }) {
+import { motion } from "framer-motion";
+import styles from "./KeyBenefits.module.scss";
 
-    const reduce = useReducedMotion();
+export default function KeyBenefits() {
 
     const container = {
         hidden: {},
@@ -17,15 +15,6 @@ export default function KeyBenefits({ data, ref }) {
         },
     };
 
-    const fromLeft = {
-        hidden: { opacity: 0, x: reduce ? 0 : -28 },
-        show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-    };
-
-    const fromRight = {
-        hidden: { opacity: 0, x: reduce ? 0 : 28 },
-        show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-    };
 
     const fadeUp = {
         hidden: { opacity: 0, y: 40 },
@@ -37,41 +26,61 @@ export default function KeyBenefits({ data, ref }) {
     };
 
     return (
-        <motion.section className={styles.KeyBenefits} ref={ref}
+        <motion.section className={styles.KeyBenefits}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={container}>
             <div className={`${styles.inner} container`}>
-                <div className={styles.textContent}>
-                    <motion.h2 variants={fromLeft} className={styles.title}>Key <strong>Benefits</strong></motion.h2>
-                    <motion.div variants={fromRight} className={styles.text}>
-                        <ul>
-                            <li><strong>Faster</strong> Submissions</li>
-                            <li>Automation cuts submission time by <strong>up to 90%</strong></li>
-                            <li><strong>Seamless EHR integration</strong> allows requests within existing workflows</li>
-                            <li>Pre-populated forms and real-time eligibility checks <strong>turn hours into minutes</strong></li>
-                        </ul>
+                <motion.h2 className={styles.title}>Key <strong>Benefits</strong></motion.h2>
+                <div className={styles.list}>
+                    <motion.div variants={fadeUp} custom={1} className={styles.item}>
+                        <div className={styles.icon}><svg width="38" height="34" viewBox="0 0 38 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clipPath="url(#clip0_2184_1649)">
+                                <path d="M7.125 0.125C6.43463 0.125 5.875 0.684644 5.875 1.375H5.25C2.48857 1.375 0.25 3.61356 0.25 6.375V23.875C0.25 26.6364 2.48857 28.875 5.25 28.875H15.9467C15.6265 26.5025 16.3781 24.013 18.2016 22.1895L26.0645 14.3266C27.888 12.5031 30.3775 11.7515 32.75 12.0717V6.375C32.75 3.61356 30.5114 1.375 27.75 1.375H27.125C27.125 0.684644 26.5654 0.125 25.875 0.125C25.1846 0.125 24.625 0.684644 24.625 1.375H8.375C8.375 0.684644 7.81537 0.125 7.125 0.125Z" fill="#00696E" />
+                                <path d="M0 10L33 10" stroke="white" />
+                            </g>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M35.9726 15.6525C33.6026 13.2825 29.7603 13.2825 27.3903 15.6525L19.5275 23.5153C17.1575 25.8853 17.1575 29.7276 19.5275 32.0976C21.8974 34.4675 25.7398 34.4675 28.1097 32.0976L35.9726 24.2347C38.3425 21.8648 38.3425 18.0224 35.9726 15.6525ZM24.3428 22.2355L29.3895 27.2823L26.342 30.3298C24.9483 31.7234 22.6888 31.7234 21.2952 30.3298C19.9016 28.9362 19.9016 26.6767 21.2952 25.2831L24.3428 22.2355Z" fill="#00696E" />
+                            <defs>
+                                <clipPath id="clip0_2184_1649">
+                                    <rect width="32.5" height="28.75" fill="white" transform="translate(0.25 0.125)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        </div>
+                        <div className={styles.text}><strong>Faster</strong> Submissions.</div>
+                    </motion.div>
+                    <motion.div variants={fadeUp} custom={2} className={styles.item}>
+                        <div className={styles.icon}>
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M1.25 17.5C1.25 8.52538 8.52538 1.25 17.5 1.25C24.5419 1.25 30.5376 5.72924 32.7934 11.994C29.94 11.5347 26.9141 12.405 24.7143 14.6049L14.6049 24.7143C12.405 26.9141 11.5347 29.94 11.994 32.7934C5.72924 30.5376 1.25 24.5419 1.25 17.5ZM16.9202 18.6671C17.2395 19.1034 17.8032 19.285 18.3172 19.117C18.8312 18.9491 19.1789 18.4696 19.1789 17.9289V7.5C19.1789 6.80963 18.6192 6.25 17.9289 6.25C17.2385 6.25 16.6789 6.80969 16.6789 7.5V14.1042L13.8212 10.1994C13.4135 9.64225 12.6314 9.52112 12.0743 9.92887C11.5172 10.3366 11.3961 11.1187 11.8038 11.6758L16.9202 18.6671Z" fill="#00696E" />
+                                <path fillRule="evenodd" clipRule="evenodd" d="M36.5693 15.9307C33.6617 13.0231 28.9476 13.0231 26.04 15.9307L15.9307 26.04C13.0231 28.9476 13.0231 33.6617 15.9307 36.5693C18.8382 39.4769 23.5524 39.4769 26.4599 36.5693L36.5693 26.4599C39.4769 23.5524 39.4769 18.8382 36.5693 15.9307ZM21.8692 23.637L28.863 30.6307L24.6922 34.8015C22.7609 36.7328 19.6297 36.7328 17.6984 34.8015C15.7672 32.8703 15.7672 29.7391 17.6984 27.8078L21.8692 23.637Z" fill="#00696E" />
+                            </svg>
+                        </div>
+                        <div className={styles.text}>Automation cuts submission time by <strong>up to 90%</strong></div>
+                    </motion.div>
+                    <motion.div variants={fadeUp} custom={3} className={styles.item}>
+                        <div className={styles.icon}>
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M6.25 1.25C3.48857 1.25 1.25 3.48857 1.25 6.25V31.25C1.25 34.0114 3.48857 36.25 6.25 36.25H20.7671C18.3363 33.8601 16.875 30.6306 16.875 27.1304V22.2773C16.875 20.013 18.3421 18.2288 20.2277 17.5H9.375C8.68463 17.5 8.125 16.9404 8.125 16.25C8.125 15.5596 8.68463 15 9.375 15H23.125C23.8154 15 24.375 15.5596 24.375 16.25C24.375 16.3336 24.3668 16.4154 24.3511 16.4944L27.518 15.7649C28.3279 15.5784 29.1721 15.5784 29.982 15.7649L31.25 16.057V6.25C31.25 3.48857 29.0114 1.25 26.25 1.25H6.25ZM23.125 12.5C23.8154 12.5 24.375 11.9404 24.375 11.25C24.375 10.5596 23.8154 10 23.125 10H9.375C8.68463 10 8.125 10.5596 8.125 11.25C8.125 11.9404 8.68463 12.5 9.375 12.5H23.125ZM16.25 21.25C16.25 21.9404 15.6904 22.5 15 22.5H9.375C8.68463 22.5 8.125 21.9404 8.125 21.25C8.125 20.5596 8.68463 20 9.375 20H15C15.6904 20 16.25 20.5596 16.25 21.25ZM15 27.5C15.6904 27.5 16.25 26.9404 16.25 26.25C16.25 25.5596 15.6904 25 15 25H9.375C8.68463 25 8.125 25.5596 8.125 26.25C8.125 26.9404 8.68463 27.5 9.375 27.5H15Z" fill="#00696E" />
+                                <path fillRule="evenodd" clipRule="evenodd" d="M27.9389 17.5921C28.4718 17.4693 29.0282 17.4693 29.5611 17.5921L36.1236 19.1037C37.5997 19.4438 38.75 20.7059 38.75 22.2772V27.1304C38.75 31.3411 36.2479 35.1548 32.3301 37.1103L29.3082 38.6184C28.9568 38.7939 28.5432 38.7939 28.1918 38.6184L25.1699 37.1103C21.2521 35.1549 18.75 31.3411 18.75 27.1304V22.2772C18.75 20.7059 19.9003 19.4438 21.3764 19.1037L27.9389 17.5921ZM28.75 22.5C29.4404 22.5 30 23.0596 30 23.75V26.25H32.5C33.1904 26.25 33.75 26.8096 33.75 27.5C33.75 28.1904 33.1904 28.75 32.5 28.75H30V31.25C30 31.9404 29.4404 32.5 28.75 32.5C28.0596 32.5 27.5 31.9404 27.5 31.25V28.75H25C24.3096 28.75 23.75 28.1904 23.75 27.5C23.75 26.8096 24.3096 26.25 25 26.25H27.5V23.75C27.5 23.0596 28.0596 22.5 28.75 22.5Z" fill="#00696E" />
+                            </svg>
+                        </div>
+                        <div className={styles.text}><strong>Seamless EHR integration</strong> allows requests within existing workflows.</div>
+                    </motion.div>
+                    <motion.div variants={fadeUp} custom={4} className={styles.item}>
+                        <div className={styles.icon}>
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.3225 3.75C16.3305 2.24411 18.0482 1.25 20 1.25C21.9518 1.25 23.6695 2.24411 24.6775 3.75H25.9375C27.836 3.75 29.375 5.28902 29.375 7.1875C29.375 9.086 27.836 10.625 25.9375 10.625H14.0625C12.164 10.625 10.625 9.086 10.625 7.1875C10.625 5.28902 12.164 3.75 14.0625 3.75H15.3225Z" fill="#00696E" />
+                                <path d="M24.4025 22.6697C24.8414 22.1368 24.7652 21.349 24.2322 20.9101C23.6994 20.4713 22.9115 20.5475 22.4727 21.0804L19.1434 25.1232L17.8992 23.3457C17.5032 22.7802 16.7239 22.6426 16.1583 23.0385C15.5927 23.4344 15.4552 24.2138 15.851 24.7793L18.0385 27.9043C18.2626 28.2244 18.6234 28.4213 19.0137 28.4366C19.4041 28.4518 19.7792 28.2837 20.0275 27.9822L24.4025 22.6697Z" fill="#00696E" />
+                                <path fillRule="evenodd" clipRule="evenodd" d="M8.75 7.18739C8.75 6.91727 8.77019 6.65189 8.80906 6.39258C6.62262 6.92683 5 8.89889 5 11.2499V33.7499C5 36.5113 7.23856 38.7499 10 38.7499H30C32.7614 38.7499 35 36.5113 35 33.7499V11.2499C35 8.89889 33.3774 6.92683 31.1909 6.39258C31.2298 6.65189 31.25 6.91727 31.25 7.18739C31.25 10.1214 28.8715 12.4999 25.9375 12.4999H14.0625C11.1285 12.4999 8.75 10.1214 8.75 7.18739ZM19.2617 15.7096L13.6367 17.0198C12.2919 17.333 11.25 18.4936 11.25 19.9318V24.1379C11.25 27.8481 13.4306 31.2098 16.8467 32.9338L19.4368 34.2408C19.791 34.4196 20.209 34.4196 20.5632 34.2408L23.1533 32.9338C26.5694 31.2098 28.75 27.8481 28.75 24.1379V19.9318C28.75 18.4936 27.7081 17.333 26.3633 17.0198L20.7383 15.7096C20.2532 15.5966 19.7468 15.5966 19.2617 15.7096Z" fill="#00696E" />
+                            </svg>
+                        </div>
+                        <div className={styles.text}>Pre-populated forms and real-time eligibility checks <strong>turn hours into minutes.</strong></div>
                     </motion.div>
                 </div>
             </div>
-            <div className={styles.imageContent}>
-                <Image src={'/keyBenefits.png'} alt="Key Benefits" width={1200} height={500} />
-                <div className={`${styles.contentInner} container`}>
-                    <motion.h2 variants={fadeUp} custom={1} className={styles.imageContentTitle}>Higher Accuracy</motion.h2>
-                    <div className={styles.list}>
-                        <motion.div variants={fadeUp} custom={3} className={styles.item}>
-                            <div className={styles.itemText}><strong>Prior Authorization AI</strong> matches payer requirements with &gt;98% accuracy.</div>
-                        </motion.div>
-                        <motion.div variants={fadeUp} custom={4} className={styles.item}>
-                            <div className={styles.itemText}>Dynamic, plan-specific questions ensure <strong>the right details</strong> every time.</div>
-                        </motion.div>
-                        <motion.div variants={fadeUp} custom={5} className={styles.item}>
-                            <div className={styles.itemText}><strong>Automated validation</strong> prevents errors that lead to denials.</div>
-                        </motion.div>
-                    </div>
-                </div>
-            </div>
+
         </motion.section>
     );
 }

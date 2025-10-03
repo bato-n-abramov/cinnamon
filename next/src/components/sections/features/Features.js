@@ -1,6 +1,6 @@
 "use client";
+
 import { mediaUrl } from "@/lib/strapi";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./Features.module.scss";
@@ -37,7 +37,7 @@ export default function Features({ data }) {
         >
             <div className={`${styles.featuredWrapper} container`}>
                 <motion.div className={styles.featuredTitle} variants={slideUp}>
-                    {Array.isArray(Title) && Title.length > 0 && <BlocksRenderer content={Title} />}
+                    <h2 dangerouslySetInnerHTML={{ __html: Title }} ></h2>
                 </motion.div>
 
                 <motion.div className={styles.featuredSubtitle} variants={slideUp}>
@@ -64,8 +64,7 @@ export default function Features({ data }) {
                                             />
                                         </div>
                                     )}
-                                    <div className={styles.itemText}>
-                                        {Array.isArray(item?.Text) && item.Text.length > 0 && <BlocksRenderer content={item.Text} />}
+                                    <div className={styles.itemText} dangerouslySetInnerHTML={{ __html: item.Text }}>
                                     </div>
                                 </motion.div>
                             );

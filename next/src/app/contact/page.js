@@ -11,7 +11,6 @@ export const metadata = {
 
 
 export default function ContactPage() {
-
     return (
         <main className={styles.ContactMain}>
             <section className={styles.contact}>

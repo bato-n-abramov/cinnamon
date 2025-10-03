@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./CharityCare.module.scss";
 
-export default function CharityCare({ data }) {
+export default function CharityCare() {
 
     const container = {
         hidden: {},

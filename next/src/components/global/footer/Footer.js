@@ -1,4 +1,5 @@
 "use client";
+
 import styles from "./Footer.module.scss";
 import Link from "next/link";
 import { mediaUrl } from "@/lib/strapi";

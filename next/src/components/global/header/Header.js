@@ -112,16 +112,6 @@ export default function Header({ data }) {
         </Link>
 
         <nav className={styles.headerNav}>
-          {/* {menu.map((item) => {
-            const href = item.link || '#';
-            const label = item.title || href;
-
-            return (
-              <Link key={item.id || href} href={href} className={styles.navLink}>
-                {label}
-              </Link>
-            )
-          })} */}
           {menu.map(renderNavLink)}
         </nav>
 

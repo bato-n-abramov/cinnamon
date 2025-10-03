@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import styles from "./AccessBarriers.module.scss";
 import Image from "next/image";
-import { FloatArrow } from "@/components/global/icons/FloatArrow";
-export default function AccessBarriers({ data }) {
+import styles from "./AccessBarriers.module.scss";
+
+export default function AccessBarriers() {
 
     const container = {
         hidden: {},

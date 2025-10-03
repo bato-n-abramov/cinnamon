@@ -1,4 +1,5 @@
 "use client";
+
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import styles from "./CostBurnoutV2.module.scss";

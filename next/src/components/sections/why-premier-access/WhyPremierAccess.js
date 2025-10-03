@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
+import Link from 'next/link';
 import styles from './WhyPremierAccess.module.scss';
 
 export default function WhyPremierAccess({ data }) {
@@ -81,7 +81,7 @@ export default function WhyPremierAccess({ data }) {
                     initial="hidden"
                     animate="show"
                     custom={5}>
-                    <a
+                    <Link
                         href="/contact"
                         className={`${styles.link} button-icon`}
                     >
@@ -94,7 +94,7 @@ export default function WhyPremierAccess({ data }) {
                                 <path d="M10.8615 7.19395H0V8.8061H10.8615C12.6375 8.8061 15.5749 8.81546 15.5749 8.81546V8.45564C12.1935 10.2781 10.7249 12.3108 9.59772 14.2384L10.9298 15.5C12.6034 12.4159 14.5845 10.1729 18 8.45564V7.57946C14.5845 5.86217 12.6034 3.58412 10.9298 0.5L9.59772 1.79673C10.7249 3.68926 12.1935 5.72198 15.5749 7.54441V7.19436C15.5513 7.19436 12.6375 7.19395 10.8615 7.19395Z" fill="#00696E" />
                             </svg>
                         </span>
-                    </a>
+                    </Link>
                 </motion.div>
             </div>
         </motion.section>

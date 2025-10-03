@@ -1,12 +1,12 @@
 "use client";
 
 import HeroV2 from "@/components/sections/hero-v2/HeroV2";
-import KeyBenefitsV2 from "@/components/sections/key-benefits-v2/KeyBenefitsV2";
+import KeyBenefits from "@/components/sections/key-benefits/KeyBenefits";
 import HigherAccuracy from "@/components/sections/higher-accuracy/HigherAccuracy";
 import CostBurnoutV2 from "@/components/sections/cost-burnout-v2/CostBurnoutV2";
-import ImpactV2 from "@/components/sections/impact-v2/ImpactV2";
-import SpeedToTherapyV2 from "@/components/sections/speed-to-therapy-v2/SpeedToTherapyV2";
-import ImageTextV3 from "@/components/sections/image-text-v3/ImageTextV3";
+import Impact from "@/components/sections/impact/Impact";
+import SpeedToTherapy from "@/components/sections/speed-to-therapy/SpeedToTherapy";
+import ImageTextV2 from "@/components/sections/image-text-v2/ImageTextV2";
 
 
 
@@ -29,12 +29,12 @@ export default function PriorAuthorizationPage() {
     return (
         <main>
             <HeroV2 data={heroData} />
-            <KeyBenefitsV2 />
+            <KeyBenefits />
             <HigherAccuracy />
-            <ImageTextV3 />
-            <SpeedToTherapyV2 />
+            <ImageTextV2 />
+            <SpeedToTherapy />
             <CostBurnoutV2 data={costBurnoutData} />
-            <ImpactV2 />
+            <Impact />
         </main>
     );
 }

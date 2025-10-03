@@ -1,10 +1,9 @@
-'use client';
-import Image from 'next/image';
-import { motion, useReducedMotion } from 'framer-motion';
-import styles from './ImageText.module.scss';
+"use client";
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+import styles from "./ImageText.module.scss";
 
-export default function ImageText({ data }) {
-    //   const { heading, text, CTA, items } = data || {};
+export default function ImageText() {
 
     const reduce = useReducedMotion();
 

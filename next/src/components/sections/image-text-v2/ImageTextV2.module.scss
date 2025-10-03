@@ -14,7 +14,8 @@
 
     @media (max-width: 768px) {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
+        padding: 0 10px;
     }
 }
 
@@ -26,9 +27,32 @@
     }
 }
 
+.itemDecor {
+    position: absolute;
+    right: -20px;
+    top: -45px;
+    width: 84px;
+    height: 84px;
+
+    @media (max-width: 768px) {
+        top: -50px;
+        right: -15px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .title {
     color: var(--color-deep-teal);
     margin-bottom: 25px;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
     strong {
         color: var(--color-amber-glow);
@@ -46,11 +70,26 @@
     ul {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        padding-left: 15px;
+        gap: 8px;
 
         li {
-            list-style-image: url('/check.svg');
+            position: relative;
+            padding: 12px 40px 12px 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.60);
+            background: var(--color-teal);
+            backdrop-filter: blur(100px);
+            color: var(--color-white);
+            line-height: 1.37;
+
+            strong {
+                font-weight: 600;
+            }
+
+            @media (max-width: 768px) {
+                text-align: center;
+                padding: 24px 16px;
+            }
         }
     }
 }
@@ -58,6 +97,8 @@
 .image {
     width: calc(642/445 * 100%);
     max-width: 640px;
+    border-radius: 10px;
+    overflow: hidden;
 
     @media (max-width: 768px) {
         width: 100%;

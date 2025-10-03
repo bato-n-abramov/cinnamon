@@ -1,7 +1,7 @@
-'use client';
-import { motion, useReducedMotion } from 'framer-motion';
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
-import styles from './TitleText.module.scss';
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import styles from "./TitleText.module.scss";
 
 export default function TitleText({ data }) {
   const title = data?.Title ?? [];
@@ -28,8 +28,6 @@ export default function TitleText({ data }) {
     show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
-  if ((!Array.isArray(title) || title.length === 0) &&
-    (!Array.isArray(text) || text.length === 0)) return null;
 
   return (
     <motion.section
@@ -41,15 +39,11 @@ export default function TitleText({ data }) {
     >
       <div className={`${styles.titleTextWrapper} container`}>
         <motion.div className={styles.left} variants={fromLeft}>
-          {Array.isArray(title) && title.length > 0 && (
-            <BlocksRenderer className={styles.title} content={title} />
-          )}
+          <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: title }} ></h2>
         </motion.div>
 
         <motion.div className={styles.right} variants={fromRight}>
-          {Array.isArray(text) && text.length > 0 && (
-            <BlocksRenderer content={text} />
-          )}
+          <div dangerouslySetInnerHTML={{ __html: text }} ></div>
         </motion.div>
       </div>
     </motion.section>

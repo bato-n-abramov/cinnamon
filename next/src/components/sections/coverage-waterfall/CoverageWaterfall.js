@@ -1,9 +1,10 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./CoverageWaterfall.module.scss";
 
-export default function CoverageWaterfall({ data }) {
+export default function CoverageWaterfall() {
 
     const container = {
         hidden: {},

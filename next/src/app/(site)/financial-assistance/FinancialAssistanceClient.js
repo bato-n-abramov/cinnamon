@@ -2,13 +2,11 @@
 
 import HeroV2 from "@/components/sections/hero-v2/HeroV2";
 import GovernmentAssistance from "@/components/sections/government-assistance/GovernmentAssistance";
-import PatientAssistance from "@/components/sections/patient-assistance/PatientAssistance";
-import ImageText from "@/components/sections/image-text/ImageText";
 import CoverageWaterfall from "@/components/sections/coverage-waterfall/CoverageWaterfall";
-import AssistanceBenefitsV2 from "@/components/sections/assistance-benefits-v2/AssistanceBenefitsV2";
-import FoundationProgramV2 from "@/components/sections/foundation-program-v2/FoundationProgramV2";
+import AssistanceBenefits from "@/components/sections/assistance-benefits/AssistanceBenefits";
+import FoundationProgram from "@/components/sections/foundation-program/FoundationProgram";
 import ImageList from "@/components/sections/image-list/ImageList";
-import AssistanceBenefitsV3 from "@/components/sections/assistance-benefits-v3/AssistanceBenefitsV3";
+import AssistanceBenefitsV2 from "@/components/sections/assistance-benefits-v2/AssistanceBenefitsV2";
 import CharityCare from "@/components/sections/charity-care/CharityCare";
 
 export default function FinancialAssistancePage() {
@@ -21,11 +19,11 @@ export default function FinancialAssistancePage() {
     return (
         <main>
             <HeroV2 data={heroData} />
-            <AssistanceBenefitsV2 />
+            <AssistanceBenefits />
             <GovernmentAssistance />
-            <FoundationProgramV2 />
+            <FoundationProgram />
             <ImageList />
-            <AssistanceBenefitsV3 />
+            <AssistanceBenefitsV2 />
             <CharityCare />
             <CoverageWaterfall />
         </main>

@@ -6,8 +6,6 @@ export const metadata = {
 
 };
 export default function PrivacyPolicyPage() {
-
-
     return (
         <main>
             <section className={styles.privacy}>

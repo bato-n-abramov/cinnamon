@@ -1,9 +1,10 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./HigherAccuracy.module.scss";
 
-
-export default function HigherAccuracy({ data }) {
+export default function HigherAccuracy() {
 
     const container = {
         hidden: {},

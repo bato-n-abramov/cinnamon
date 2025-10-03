@@ -1,6 +1,7 @@
-'use client';
-import Link from 'next/link';
-import styles from './ThankYou.module.scss';
+"use client";
+
+import Link from "next/link";
+import styles from "./ThankYou.module.scss";
 
 export default function ThankYou() {
     return (

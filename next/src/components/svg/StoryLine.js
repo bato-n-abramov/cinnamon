@@ -1,6 +1,7 @@
-'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export const StoryLine = () => {
     const containerRef = useRef(null);
@@ -9,7 +10,7 @@ export const StoryLine = () => {
         offset: ["start 85%", "end 25%"]
     });
 
-    const clipPathProgress = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+    const clipPathProgress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
     return (
         <div ref={containerRef}>

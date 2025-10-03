@@ -1,10 +1,10 @@
-'use client';
-import Image from 'next/image';
-import { motion, useReducedMotion } from 'framer-motion';
-import styles from './GovernmentAssistance.module.scss';
+"use client";
 
-export default function GovernmentAssistance({ data }) {
-    const reduce = useReducedMotion();
+import Image from "next/image";
+import { motion } from "framer-motion";
+import styles from "./GovernmentAssistance.module.scss";
+
+export default function GovernmentAssistance() {
 
     const container = {
         hidden: {},
@@ -21,11 +21,9 @@ export default function GovernmentAssistance({ data }) {
         show: (i = 0) => ({
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, delay: i * 0.2, ease: 'linear' },
+            transition: { duration: 0.6, delay: i * 0.2, ease: "linear" },
         }),
     };
-
-
 
     return (
         <motion.section

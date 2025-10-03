@@ -1,10 +1,9 @@
 "use client";
 
 import styles from "./ImageList.module.scss";
-
 import Image from "next/image";
 
-export default function ImageList({ data }) {
+export default function ImageList() {
 
     const container = {
         hidden: {},

@@ -1,7 +1,7 @@
 "use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { mediaUrl } from "@/lib/strapi";
 import { LineOne, LineTwo, LineThree } from "@/components/svg/Lines";
 import { motion } from "framer-motion";
@@ -44,14 +44,12 @@ export default function HowItWorks({ data }) {
             viewport={{ once: true, amount: 0.1 }}
         >
             <div className={`${styles.howItWorksWrapper} container`}>
-                {Array.isArray(Title) && Title.length > 0 && (
-                    <motion.div
-                        className={styles.howItWorksTitle}
-                        variants={slideUp(0)}
-                    >
-                        <BlocksRenderer content={Title} />
-                    </motion.div>
-                )}
+                <motion.div
+                    className={styles.howItWorksTitle}
+                    variants={slideUp(0)}
+                >
+                    <h2 dangerouslySetInnerHTML={{ __html: Title }}></h2>
+                </motion.div>
                 {Subtitle && (
                     <motion.div
                         className={styles.howItWorksSubtitle}

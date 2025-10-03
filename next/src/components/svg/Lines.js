@@ -1,7 +1,6 @@
-import React from 'react';
-import { motion, useInView } from 'framer-motion';
-import RevealMask from '@/components/svg/RevealMask';
-import { useRef } from 'react';
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
+import RevealMask from "@/components/svg/RevealMask";
 
 export function LineOne({ className, id }) {
   const ref = useRef(null);

@@ -1,6 +1,6 @@
-'use client';
-import { useRef, useEffect } from "react";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+"use client";
+
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import desktopAnim from "@/lottie/desktop.json";
@@ -33,7 +33,7 @@ export default function Graphic({ data }) {
     >
       <div className={`${styles.graphicWrapper} container`}>
         <motion.div className={styles.graphicTitle} variants={slideUp}>
-          {Array.isArray(Title) && Title.length > 0 && <BlocksRenderer content={Title} />}
+          <h2 dangerouslySetInnerHTML={{ __html: Title }} ></h2>
         </motion.div>
 
         <motion.div className={styles.graphicSubtitle} variants={slideUp}>

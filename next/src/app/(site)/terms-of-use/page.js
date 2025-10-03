@@ -1,14 +1,11 @@
 import styles from "./Terms.module.scss";
 
-
 export const metadata = {
     title: "Terms of Use | Cinnamon Health",
 };
 
 
 export default function TermsPage() {
-
-
     return (
         <main>
             <section className={styles.terms}>

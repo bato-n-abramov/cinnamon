@@ -1,10 +1,10 @@
-'use client';
-import Image from 'next/image';
-import { motion, useReducedMotion } from 'framer-motion';
+"use client";
 
-import styles from './ImageTextV2.module.scss';
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+import styles from "./ImageTextV2.module.scss";
 
-export default function ImageTextV2({ data }) {
+export default function ImageTextV2() {
 
     const reduce = useReducedMotion();
 
@@ -39,7 +39,9 @@ export default function ImageTextV2({ data }) {
                     <h2 className={styles.title}>More <strong>Approvals</strong></h2>
                     <div className={styles.text}>
                         <ul>
-                            <li>Complete, accurate submissions drive significantly <strong>higher approval rates</strong></li>
+                            <li>Complete, accurate submissions drive significantly <strong>higher approval rates</strong>
+                                <div className={styles.itemDecor}><Image src={"/Floating-icons.png"} width={50} height={50} alt="Decor" /></div>
+                            </li>
                             <li><strong>Predictive analytics</strong> keep pace with constantly changing payer rules</li>
                             <li>Smart resubmission workflows <strong>accelerate appeals and reduce delays</strong></li>
                         </ul>

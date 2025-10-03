@@ -16,7 +16,6 @@ export async function POST(req) {
             title,
             goals,
             how,
-            captcha,
         } = body || {};
 
         if (!fullName || !email || !org || !title || !goals) {

@@ -1,6 +1,6 @@
 "use client";
-import { motion, useReducedMotion } from "framer-motion";
 
+import { motion, useReducedMotion } from "framer-motion";
 import styles from "./CostBurnout.module.scss";
 
 export default function CostBurnout({ data }) {
@@ -35,12 +35,6 @@ export default function CostBurnout({ data }) {
             <div className={`${styles.inner} container`}>
                 <motion.h2 variants={fromLeft} className={styles.title}>{data.title}</motion.h2>
                 <motion.div variants={fromRight} className={styles.text}>
-                    {/* <ul>
-                        <li>Providers <strong>save thousands</strong> in administrative overhead</li>
-                        <li>Automated workflows <strong>reduce staff burden and physician burnout</strong></li>
-                        <li>Freed resources can be redirected to direct <strong>patient care</strong></li>
-
-                    </ul> */}
                     <ul>
                         {data.items.map((item, i) => (
                             <li key={i} dangerouslySetInnerHTML={{ __html: item }}></li>

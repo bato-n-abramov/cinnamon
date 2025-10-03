@@ -5,7 +5,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ReCAPTCHA from "react-google-recaptcha";
 import ThankYou from "../thank-you/ThankYou";
-
 import styles from "./ContactForm.module.scss";
 
 export default function ContactForm() {
