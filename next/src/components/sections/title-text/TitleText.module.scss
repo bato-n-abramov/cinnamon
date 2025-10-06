@@ -1,5 +1,5 @@
 .titleText {
-    padding: 135px 0 0;
+    padding: 135px 0 50px;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
 
     @media (max-width: 768px) {
         padding: 0 10px;
@@ -22,24 +22,22 @@
     }
 }
 
-.left {
-    flex: 1 0 auto;
-    max-width: 550px;
+.content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}
+
+.title {
+    font-weight: 600;
     color: var(--color-deep-teal);
-    letter-spacing: 1px;
     text-transform: capitalize;
-
-    @media screen and (max-width: 1025px) {
-        max-width: 100%;        
-    }
-
-    h2 {
-        font-weight: 600;
-
-        @media (max-width: 768px) {
-            text-align: center;
-        }
-    }
 
     strong {
         font-weight: 600;
@@ -47,7 +45,7 @@
     }
 }
 
-.right {
+.text {
     flex: 1;
     max-width: 525px;
     font-size: var(--font-body-1);
@@ -78,13 +76,15 @@
     }
 }
 
-
 .imageWrapper {
-    width: 100%;
+    width: 50%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 .image {
-    width: 50%;
     height: 350px;
 
     @media (max-width: 768px) {

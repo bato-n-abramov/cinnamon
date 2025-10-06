@@ -101,10 +101,20 @@
     background: linear-gradient(270deg, #1F8D92 0%, #51B0B1 100%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
 
+    img {
+        width: 56px;
+        height: 56px;
+
+        @media (max-width: 768px) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
 
     @media (max-width: 768px) {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         margin-bottom: -60px;
         z-index: 1;
     }

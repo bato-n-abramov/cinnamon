@@ -35,7 +35,7 @@ const heroData = {
 }
 
 const titleTextData = {
-  Title: "<strong>The Bridge</strong> Across the Ecosystem",
+  Title: "<strong>The Bridge</strong>Across<br/>the Ecosystem",
   Text: "Healthcare is a complex adaptive ecosystem, and Cinnamon is the first company to build a platform that provides benefits to all stakeholders simultaneously. <br /> <br /> Medication access works when health systems, patients, and manufacturers engage synchronously. Cinnamon aligns all three—so the path to therapy is efficient, affordable, and accurate. Resulting in streamlining pharmacy practices while enhancing patient experiences."
 }
 

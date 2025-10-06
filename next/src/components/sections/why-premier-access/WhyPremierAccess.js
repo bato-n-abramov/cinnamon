@@ -62,7 +62,7 @@ export default function WhyPremierAccess({ data }) {
                         </div>
                     </motion.div>
                     <motion.div variants={fadeUp} custom={3} className={`${styles.itemImage} ${styles.item} ${styles.item3}`}>
-                        <Image src={"/WhyPremierAccess.png"} width={200} height={200} alt="WhyPremierAccess" />
+                        <Image src={"/WhyPremierAccess.png"} width={700} height={700} alt="WhyPremierAccess" />
                     </motion.div>
                     <motion.div variants={fadeUp} custom={4} className={`${styles.item} ${styles.item4}`}>
                         <div className={styles.itemIcon}>

@@ -16,6 +16,11 @@ export default function OurStory({ data }) {
 
                 <FadeIn>
                     <div className={`${styles.item} ${styles.itemFirst}`}>
+                        <svg width="32" height="105" viewBox="0 0 32 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 1V73" stroke="#2AB9B2" strokeWidth="2" strokeLinecap="round" strokeDasharray="8 8" />
+                            <circle cx="16" cy="89" r="12" fill="#E69138" stroke="#EBF6F6" strokeWidth="8" />
+                        </svg>
+
                         <div className={styles.tag}>
                             How Our Mission Begins
                         </div>

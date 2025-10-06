@@ -39,16 +39,16 @@ export default function TitleText({ data }) {
       variants={container}
     >
       <div className={`${styles.titleTextWrapper} container`}>
-        <motion.div className={styles.left} variants={fromLeft}>
-          <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: title }} ></h2>
-        </motion.div>
+        <motion.h2 variants={fromLeft} className={styles.title} dangerouslySetInnerHTML={{ __html: title }} ></motion.h2>
+        <div className={styles.content}>
+          <motion.div variants={fromLeft} className={styles.imageWrapper}>
+            <div className={styles.image}><Image src={"/titleText.png"} width={700} height={700} alt={"image"} /></div>
+          </motion.div>
+          <motion.div className={styles.text} variants={fromRight}>
+            <div dangerouslySetInnerHTML={{ __html: text }} ></div>
+          </motion.div>
+        </div>
 
-        <motion.div className={styles.right} variants={fromRight}>
-          <div dangerouslySetInnerHTML={{ __html: text }} ></div>
-        </motion.div>
-        <motion.div variants={fromLeft} className={styles.imageWrapper}>
-          <div className={styles.image}><Image src={"/titleText.png"} width={700} height={700} alt={"image"} /></div>
-        </motion.div>
       </div>
     </motion.section>
   );
