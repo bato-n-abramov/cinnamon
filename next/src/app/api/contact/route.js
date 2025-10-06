@@ -5,6 +5,44 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const json = (data, init = {}) =>
     new Response(JSON.stringify(data), { status: 200, headers: { "Content-Type": "application/json" }, ...init });
 
+
+
+async function verifyRecaptcha(token) {
+    const secret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!secret) {
+        console.error("Missing RECAPTCHA_SECRET_KEY");
+        return { ok: false, reason: "Server misconfiguration" };
+    }
+
+    try {
+        const params = new URLSearchParams();
+        params.append("secret", secret);
+        params.append("response", token);
+
+        const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: params.toString(),
+        });
+
+        const data = await res.json();
+
+        if (!data.success) {
+            return {
+                ok: false,
+                reason: Array.isArray(data["error-codes"])
+                    ? data["error-codes"].join(", ")
+                    : "Captcha failed",
+            };
+        }
+
+        return { ok: true };
+    } catch (e) {
+        console.error("reCAPTCHA verify error:", e);
+        return { ok: false, reason: "Captcha verification error" };
+    }
+}
+
 export async function POST(req) {
     try {
         const body = await req.json();
@@ -16,10 +54,23 @@ export async function POST(req) {
             title,
             goals,
             how,
+            captcha
         } = body || {};
 
         if (!fullName || !email || !org || !title || !goals) {
             return json({ error: 'Missing required fields' }, { status: 400 });
+        }
+
+        if (!captcha) {
+            return json({ error: "Captcha token is missing" }, { status: 400 });
+        }
+
+        const captchaResult = await verifyRecaptcha(captcha);
+        if (!captchaResult.ok) {
+            return json(
+                { error: `Captcha verification failed: ${captchaResult.reason}` },
+                { status: 400 }
+            );
         }
 
 
