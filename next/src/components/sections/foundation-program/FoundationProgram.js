@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./FoundationProgram.module.scss";
-import { Shield } from "@/components/global/icons/Shield";
-import { Heart } from "@/components/global/icons/Heart";
 
 export default function FoundationProgram() {
 
@@ -42,16 +40,17 @@ export default function FoundationProgram() {
                     Cinnamon’s healthcare SaaS matches patients to nonprofit funds in real time. Automating follow-through so no one slips through the cracks.
                 </motion.div>
                 <div className={styles.list}>
-                    <motion.div className={`${styles.item} ${styles.itemImage}`} variants={fadeUp} custom={1}>
-                        <Image src={'/foundationProgram.png'} alt="foundationProgram" width={700} height={700} />
-                    </motion.div>
                     <motion.div className={styles.item} variants={fadeUp} custom={3}>
-                        <Shield />
+                        <div className={styles.itemHeader}>Problem</div>
                         <div className={styles.itemText}><strong>Nonprofit foundations deliver</strong> targeted aid for underinsured patients, but funds open and close fast and eligibility is rigid.</div>
                     </motion.div>
-                    <motion.div variants={fadeUp} custom={4} className={styles.item}>
-                        <Heart />
-                        <div className={styles.itemText}>Cinnamon monitors program availability by disease, matches eligible patients from EHR signals, and alerts your team to enroll.<br /><br /> <strong>Quickly and compliantly.</strong></div>
+                    <motion.div variants={fadeUp} custom={4} className={styles.icon}><Image src={"/arrow-orange.png"} width={500} height={500} alt="arrow" /></motion.div>
+                    <motion.div variants={fadeUp} custom={5} className={styles.item}>
+                        <div className={styles.itemHeader}>Solution</div>
+                        <div className={styles.itemText}>Cinnamon monitors program availability by disease, matches eligible patients from EHR signals, and alerts your team to enroll.<br /><strong className={styles.mT}>Quickly and compliantly.</strong></div>
+                    </motion.div>
+                    <motion.div className={`${styles.item} ${styles.itemImage}`} variants={fadeUp} custom={6}>
+                        <Image src={'/foundationProgram.png'} alt="foundationProgram" width={700} height={700} />
                     </motion.div>
                 </div>
             </div>

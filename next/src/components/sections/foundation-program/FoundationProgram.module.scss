@@ -9,6 +9,7 @@
 
     @media (max-width: 768px) {
         padding: 80px 0;
+        background-image: url("/foundationProgramBg_mob.png");
     }
 }
 
@@ -80,10 +81,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
     width: 100%;
     max-width: 350px;
     border-radius: 16px;
-    padding: 40px 32px;
     border: 2px solid var(--color-white);
     background: rgba(255, 255, 255, 0.75);
     box-shadow: 0 4px 25px 0 rgba(82, 82, 82, 0.08);
@@ -93,13 +94,38 @@
         max-width: 100%;
         align-items: center;
         gap: 20px;
-        padding: 24px 16px;
     }
 
     svg {
         @media (max-width: 768px) {
             width: 40px;
             height: 40px;
+        }
+    }
+}
+
+.icon {
+    width: 72px;
+    height: 72px;
+    max-width: 72px;
+    flex: 1 0 auto;
+    margin: 0 -45px;
+    position: relative;
+    z-index: 1;
+    align-self: center;
+
+    @media (max-width: 768px) {
+        margin: -35px 0;
+        width: 64px;
+        height: 64px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+
+        @media (max-width: 768px) {
+            transform: rotate(90deg);
         }
     }
 }
@@ -123,14 +149,47 @@
         height: 100%;
         border-radius: 16px;
         overflow: hidden;
+        object-fit: cover;
+        aspect-ratio: 500 / 250;
+
+        @media (max-width: 768px) {
+            aspect-ratio: 500 / 300;
+        }
+    }
+}
+
+.itemHeader {
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 10px 10px 0 0;
+    border-top: 1px solid var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+    border-left: 1px solid  var(--color-white);
+    background:  var(--color-white);;
+    box-shadow: 0 54px 54px 0 rgba(52, 62, 65, 0.04), 0 217px 87px 0 rgba(52, 62, 65, 0.01);
+    color: var(--color-deep-teal);
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        font-size: var(--font-body-1);
     }
 }
 
 .itemText {
     color: var(--color-dark-green);
     line-height: 1.37;
+    padding: 0 32px 32px;
 
     @media (max-width: 768px) {
         text-align: center;
+        padding: 0 16px 24px;
     }
+}
+
+.mT {
+    display: inline-block;
+    margin-top: 8px;
 }
