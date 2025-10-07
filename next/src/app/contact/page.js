@@ -19,9 +19,8 @@ export default function ContactPage() {
                         <div className={styles.info}>
                             <h1 className={styles.infoTitle}>let’s Get In Touch</h1>
                             <div className={styles.infoText}>Let’s connect and explore how we can help you improve efficiency, reduce costs, and deliver better outcomes for patients</div>
-                            <div className={styles.address}><Location /> 565 Bellevue Ave Oakland, CA 94610</div>
-                            <a href="mailto:cinnamon.health@gmail.com" className={styles.email}><Message /> cinnamon.health@gmail.com</a>
-                            <a href="tel:01234567890" className={styles.phone}><Phone /> 01234567890</a>
+                            <div className={styles.addressTitle}>Mailing address</div>
+                            <div className={styles.address}><Location />1101 Marina Village Parkway Alameda CA 94501</div>
                         </div>
                         <ContactForm />
                     </div>

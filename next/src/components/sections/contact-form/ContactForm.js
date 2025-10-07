@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -12,7 +12,20 @@ export default function ContactForm() {
     const [submitting, setSubmitting] = useState(false);
     const [status, setStatus] = useState(null); // 'ok' | 'error' | null
 
-    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+    const [siteKey, setSiteKey] = useState(null);
+
+    useEffect(() => {
+        fetch("/api/contact") // Fetch site key from route (GET /api/contact)
+            .then((r) => r.json())
+            .then(({ siteKey }) => {
+                setSiteKey(siteKey || null);
+
+            })
+            .catch((err) => {
+                console.error("Failed to load reCAPTCHA site key:", err);
+                setSiteKey(null);
+            });
+    }, []);
 
     const Schema = Yup.object({
         fullName: Yup.string()
@@ -26,7 +39,6 @@ export default function ContactForm() {
         org: Yup.string()
             .trim()
             .required("Organization is required"),
-        isManufacturerOrHealthSystem: Yup.boolean(),
         title: Yup.string()
             .trim()
             .matches(/^[^\d]*$/, "Title cannot contain numbers")
@@ -139,11 +151,6 @@ export default function ContactForm() {
                                     )}
                                 </Field>
                                 <ErrorMessage name="org" component="span" className={styles.err} />
-                                <label htmlFor="isManufacturerOrHealthSystem" className="checkbox">
-                                    <Field id="isManufacturerOrHealthSystem" name="isManufacturerOrHealthSystem" type="checkbox" />
-                                    <span className={styles.customCheckbox}></span>
-                                    <span>Manufacturer or Health System</span>
-                                </label>
                             </div>
                         </div>
 
@@ -204,12 +211,14 @@ export default function ContactForm() {
 
                         <div className={styles.row}>
                             <div className={styles.col}>
-                                <ReCAPTCHA
-                                    ref={recaptchaRef}
-                                    sitekey={siteKey}
-                                    onChange={(token) => setFieldValue("captcha", token)}
-                                    aria-label="Verify you are not a robot"
-                                />
+                                {siteKey ? (
+                                    <ReCAPTCHA
+                                        ref={recaptchaRef}
+                                        sitekey={siteKey}
+                                        onChange={(token) => setFieldValue("captcha", token)}
+                                        aria-label="Verify you are not a robot"
+                                    />
+                                ) : (<div style={{ minHeight: 78 }} />)}
                                 <ErrorMessage name="captcha" component="span" className={styles.err} />
                             </div>
                         </div>

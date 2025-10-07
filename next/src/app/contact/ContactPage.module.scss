@@ -75,11 +75,16 @@
     }
 }
 
-.address,
-.email,
-.phone {
+.addressTitle {
+    margin-bottom: 16px;
+    font-size: var(--font-body-2);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.address {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     font-size: var(--font-body-1);
     color: var(--color-white);

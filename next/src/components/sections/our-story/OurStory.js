@@ -25,9 +25,9 @@ export default function OurStory({ data }) {
                             How Our Mission Begins
                         </div>
                         <div className={styles.text}>
-                            <strong>In March 2023</strong>, Eric Geslien and Bryan Andrade founded Cinnamon with <strong>a bold mission: to transform the healthcare industry’s</strong> transactional mindset into a collaborative ecosystem where every stakeholder: patients, providers, and pharmaceutical brands thrives. <br /><br />
+                            <strong>In March 2023</strong>, Eric Geslien and Bryan Andrade founded Cinnamon with <strong>a bold mission: to transform the healthcare industry’s transactional mindset into a collaborative ecosystem</strong> where every stakeholder: patients, providers, and pharmaceutical brands thrive. <br /><br />
                             They saw a broken system, one that taxed health systems and leaned on commissions from patient program enrollments, and envisioned a better way.<br /><br />
-                            Cinnamon was born to bridge gaps, align incentives, and deliver value without compromise.
+                            Cinnamon was born to bridge gaps, align incentives, and <strong>deliver value without compromise.</strong>
                         </div>
                     </div>
                 </FadeIn>
@@ -49,7 +49,7 @@ export default function OurStory({ data }) {
                                     <Image src="/ourStory1.png" width={700} height={700} alt="Cinnamon" />
                                 </div>
                                 <div className={styles.text}>
-                                    The journey began with their first customer, <strong>UC Health - Cincinnati</strong>. The buyer&apos;s demand was clear: a risk-free solution that worked. This partnership became the crucible for Cinnamon&apos;s product development.<br /><br />
+                                    The journey began with their first customer, <strong>UC Health - Cincinnati.</strong><br /> The buyer&apos;s demand was clear: a risk-free solution that worked. This partnership became the crucible for Cinnamon&apos;s product development.<br /><br />
                                     Working closely with UC Health, Eric and Bryan gathered critical marketing requirements, refining their platform into what would become the industry&apos;s gold standard. <br /><br />
                                     <strong>A solution that prioritized patient access</strong>, streamlined prior authorization, and boosted adherence, all while eliminating financial friction for health systems.
                                 </div>

@@ -39,7 +39,7 @@ export default function CharityCare() {
                         to expedite care when other programs fall short.</div>
                     <div className={styles.text}>
                         Charity care enables health systems to provide access for financially vulnerable patients while balancing mission-driven care with financial and regulatory requirements.<br /><br />
-                        It often serves as a lifeline for those who might otherwise forgo necessary treatment – typically managed by revenue cycle financial navigators.
+                        It often serves as a lifeline for those who might otherwise forgo necessary treatment, typically managed by revenue cycle financial navigators.
                     </div>
                 </motion.div>
             </div>

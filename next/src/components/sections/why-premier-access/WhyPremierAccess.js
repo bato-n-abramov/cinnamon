@@ -57,7 +57,7 @@ export default function WhyPremierAccess({ data }) {
                             </svg>
                         </div>
                         <div className={styles.itemText}>
-                            By leveraging the Cinnamon network, <strong>Premier Access accelerates approvals, enhances access, and drives patient adherence.</strong>< br />
+                            By leveraging the Cinnamon network, <strong>Premier Access accelerates approvals, enhances access, and drives patient adherence.</strong><br /><br />
                             Ensuring your therapies reach those who need them most, faster and more effectively.
                         </div>
                     </motion.div>
@@ -71,7 +71,7 @@ export default function WhyPremierAccess({ data }) {
                             </svg>
                         </div>
                         <div className={styles.itemText}>
-                            <strong>Discover how Premier Access can elevate</strong> your brand’s impact while reducing operational complexities. <br />
+                            <strong>Discover how Premier Access can elevate</strong> your brand’s impact while reducing operational complexities. <br /><br />
                             <strong>Contact us today</strong> to learn more through our secure information request form below.
                         </div>
                     </motion.div>

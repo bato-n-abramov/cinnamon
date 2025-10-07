@@ -35,8 +35,8 @@ const heroData = {
 }
 
 const titleTextData = {
-  Title: "<strong>The Bridge</strong>Across<br/>the Ecosystem",
-  Text: "Healthcare is a complex adaptive ecosystem, and Cinnamon is the first company to build a platform that provides benefits to all stakeholders simultaneously. <br /> <br /> Medication access works when health systems, patients, and manufacturers engage synchronously. Cinnamon aligns all three—so the path to therapy is efficient, affordable, and accurate. Resulting in streamlining pharmacy practices while enhancing patient experiences."
+  Title: "<strong>The Bridge</strong> Across<br/>the Ecosystem",
+  Text: "Healthcare is a complex adaptive ecosystem, and Cinnamon is the first company to build a platform that provides benefits to all stakeholders simultaneously. <br /> <br /> Medication access works when health systems, patients, and manufacturers engage synchronously. <br /> <br /> Cinnamon aligns all three so the path to therapy is efficient, affordable, and accurate, streamlining pharmacy practices and enhancing patient experiences."
 }
 
 const HowItWorksData = {
@@ -44,9 +44,9 @@ const HowItWorksData = {
   "main_content": {
     "id": 4,
     "Title": "Medication Access ",
-    "Text": "Cinnamon unifies charity care, nonprofit grants, and manufacturer Co-pay programs and PAPs in one workflow."
+    "Text": "Cinnamon reduces barriers to medication access, driving stronger adherence, fewer treatment interruptions, and improved outcomes."
   },
-  "Subtitle": "Cinnamon connects Prior Authorization AI, Patient Assistance, and Adherence Campaigns - all centered on faster, easier Medication Access.",
+  "Subtitle": "Cinnamon connects Prior Authorization AI, Patient Assistance, and Adherence Campaigns. All centered on faster, easier Medication Access.",
   "items_list": [
     {
       "id": 6,
@@ -58,7 +58,7 @@ const HowItWorksData = {
       },
       "Link": {
         "id": 5,
-        "Link_url": "/contact",
+        "Link_url": "/prior-authorization",
         "Link_title": "Learn More",
         "Link_target": "_self"
       }
@@ -66,14 +66,14 @@ const HowItWorksData = {
     {
       "id": 7,
       "Title": "Patient Assistance",
-      "Text": "Cinnamon unifies charity care, nonprofit grants, and manufacturer Co-pay programs and PAPs in one workflow.",
+      "Text": "Cinnamon unifies charity care, nonprofit grants, and manufacturer copay programs and PAPs in one workflow.",
       "Icon": {
         "id": 29,
         "url": "/heart.svg",
       },
       "Link": {
         "id": 5,
-        "Link_url": "/contact",
+        "Link_url": "/financial-assistance",
         "Link_title": "Learn More",
         "Link_target": "_self"
       }
@@ -81,7 +81,7 @@ const HowItWorksData = {
     {
       "id": 5,
       "Title": "Adherence Campaigns",
-      "Text": "Reauthorization notifications, Re-enrollment, and Medication Adherence Reminders",
+      "Text": "Reauthorization notifications, re-enrollment, and medication adherence reminders.",
       "Icon": {
         "id": 28,
         "url": "/task_square_2_84adbd3bbb.svg",

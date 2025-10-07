@@ -51,7 +51,7 @@ export default function FoundationProgram() {
                     </motion.div>
                     <motion.div variants={fadeUp} custom={4} className={styles.item}>
                         <Heart />
-                        <div className={styles.itemText}>Cinnamon monitors program availability by disease, matches eligible patients from EHR signals, and alerts your team to enroll. <strong>Quickly and compliantly.</strong></div>
+                        <div className={styles.itemText}>Cinnamon monitors program availability by disease, matches eligible patients from EHR signals, and alerts your team to enroll.<br /><br /> <strong>Quickly and compliantly.</strong></div>
                     </motion.div>
                 </div>
             </div>

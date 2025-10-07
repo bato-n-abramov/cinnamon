@@ -8,7 +8,7 @@ export default function PremierAccessPage() {
 
     const heroData = {
         title: "Premier Access",
-        subtitle: "<strong>Empowering</strong> pharmaceutical brands to optimize patient access and outcomes. Discover how Premier Access can elevate your brand’s impact while reducing operational complexities.",
+        subtitle: "Premier Access <strong>is the transformative solution</strong> for pharmaceutical brands seeking to streamline the journey from high-cost drug prescriptions <strong>to patient success.</strong>",
         cta: {
             url: "/contact",
             text: "Talk to our team",

@@ -33,9 +33,6 @@ export default function AssistanceBenefitsV2() {
             variants={container} className={styles.assistanceBenefits} >
             <div className={`container ${styles.inner}`}>
                 <motion.h2 variants={fadeUp} custom={1} className={styles.title}>Patient Assistance Programs <strong>(PAPs)</strong></motion.h2>
-                <motion.div variants={fadeUp} custom={2} className={styles.text}>
-                    Manufacturer PAPs are vital lifelines for uninsured and underinsured patients. However, this process is often slowed by complex eligibility rules, manual enrollment, and fragmented communication.
-                </motion.div>
                 <div className={styles.list}>
                     <motion.div className={styles.itemWrapper} variants={fadeUp} custom={3} >
                         <div className={styles.itemIcon}><Image src={"/icon1.svg"} width={50} height={50} alt="Icon" /></div>

@@ -1,11 +1,9 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 const json = (data, init = {}) =>
     new Response(JSON.stringify(data), { status: 200, headers: { "Content-Type": "application/json" }, ...init });
-
-
 
 async function verifyRecaptcha(token) {
     const secret = process.env.RECAPTCHA_SECRET_KEY;
@@ -43,6 +41,12 @@ async function verifyRecaptcha(token) {
     }
 }
 
+export async function GET() {
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+    return json({ siteKey });
+}
+
 export async function POST(req) {
     try {
         const body = await req.json();
@@ -50,7 +54,6 @@ export async function POST(req) {
             fullName,
             email,
             org,
-            isManufacturerOrHealthSystem,
             title,
             goals,
             how,
@@ -73,16 +76,13 @@ export async function POST(req) {
             );
         }
 
-
         const subject = `Contact form: ${fullName || 'No name'}`;
-        const mhLabel = isManufacturerOrHealthSystem ? 'Yes' : 'No';
 
         const text = [
             `Full name: ${fullName}`,
             `Email: ${email}`,
             `Organization: ${org}`,
             `Job title: ${title}`,
-            `Manufacturer or Health System: ${mhLabel}`,
             '',
             `Goals:`,
             goals,
@@ -100,12 +100,16 @@ export async function POST(req) {
           <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>
           <tr><td><strong>Organization</strong></td><td>${escapeHtml(org)}</td></tr>
           <tr><td><strong>Job title</strong></td><td>${escapeHtml(title)}</td></tr>
-          <tr><td><strong>Manufacturer/Health System</strong></td><td>${mhLabel}</td></tr>
           <tr><td><strong>Goals</strong></td><td>${nl2br(escapeHtml(goals))}</td></tr>
           <tr><td><strong>How did you hear</strong></td><td>${nl2br(escapeHtml(how || ''))}</td></tr>
         </table>
       </div>
     `;
+
+        if (!resend) {
+            console.error("Missing RESEND_API_KEY");
+            return json({ error: "Email service misconfigured" }, { status: 500 });
+        }
 
         const { error } = await resend.emails.send({
             from: process.env.CONTACT_FROM,

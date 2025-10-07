@@ -27,8 +27,8 @@ export default function ImageList() {
     return (
         <section className={styles.imageList}>
             <div className={`${styles.inner} container`}>
-                <h2 className={styles.title}>Manufacturer Co-Pay <strong>Automation</strong></h2>
-                <div className={styles.text}>Co-pay programs can slash out-of-pocket costs, but they’re easy to miss.</div>
+                <h2 className={styles.title}>Manufacturer Copay <strong>Automation</strong></h2>
+                <div className={styles.text}>Copay programs can slash out-of-pocket costs, but they’re easy to miss.</div>
                 <div className={styles.content}>
                     <div className={styles.image}>
                         <Image src={"/imageList.png"} width={700} height={700} alt={"image"} />

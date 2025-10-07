@@ -9,7 +9,7 @@ export default function PremierAccessPage() {
 
     const heroData = {
         title: "The Founders’<br /> <em>Mindset</em>",
-        subtitle: "Operator-founders Eric Geslien and Bryan Andrade bring product discipline to healthcare. They build where it matters most, at the point of care, and measure success by what truly counts: <strong>less friction, faster starts</strong>, and programs delivered right the first time.",
+        subtitle: "Operator-founders Eric Geslien and Bryan Andrade bring product discipline to healthcare.<br /> They build where it matters most, at the point of care, and measure success by what truly counts:<br /> <strong>less friction, faster starts</strong>, and programs delivered right the first time.",
     }
 
     return (
