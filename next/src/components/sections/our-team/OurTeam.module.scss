@@ -1,0 +1,96 @@
+.ourTeam {
+    padding: 125px 0;
+
+    @media (max-width: 768px) {
+       padding: 80px 0;
+    }
+}
+
+.inner {
+    @media (max-width: 768px) {
+        padding: 0 10px;
+    }
+}
+
+
+.title {
+    color: var(--color-deep-teal);
+    text-align: center;
+
+    strong {
+        color: var(--color-amber-glow);
+        font-weight: 600;
+    }
+}
+
+.list {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 70px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 40px;
+    border-radius: 16px;
+    border: 2px solid var(--color-soft-aqua);
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 4px 25px 0 rgba(82, 82, 82, 0.08);
+    backdrop-filter: blur(12.5px);
+    color: var(--color-dark-green);
+
+    @media (max-width: 768px) {
+        padding: 32px 20px;
+    }
+
+    &:hover {
+        .name {
+            color: var(--color-deep-teal);
+        }
+    }
+}
+
+.itemFlora {
+    border-radius: 16px;
+    border: 2px solid var(--color-amber-glow);
+}
+
+.image {
+    width: 100%;
+    max-width: 184px;
+    margin-bottom: 24px;
+
+    @media (max-width: 575px) {
+       max-width: 144px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.name {
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 4px;
+
+    @media (max-width: 768px) {
+        font-size: var(--font-body-1);
+    }
+}
+
+.role {
+    font-size: var(--font-body-1);
+    text-align: center;
+}

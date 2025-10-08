@@ -3,6 +3,7 @@
 import HeroV2 from "@/components/sections/hero-v2/HeroV2";
 import AccessBarriers from "@/components/sections/access-barriers/AccessBarriers";
 import OurStory from "@/components/sections/our-story/OurStory";
+import OurTeam from "@/components/sections/our-team/OurTeam";
 
 export default function PremierAccessPage() {
 
@@ -17,6 +18,7 @@ export default function PremierAccessPage() {
             <HeroV2 data={heroData} />
             <AccessBarriers />
             <OurStory />
+            <OurTeam />
         </main>
     );
 }

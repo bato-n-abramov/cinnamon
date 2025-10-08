@@ -100,6 +100,11 @@ const logosData = {
     { id: 14, url: "/Mask_group_3_24ae6c5233.png", width: 180, height: 51, name: "Mask group-3.png" },
     { id: 13, url: "/Mask_group_1_934ee02d69.png", width: 180, height: 45, name: "Mask group-1.png" },
     { id: 12, url: "/Mask_group_2_52c581c897.png", width: 180, height: 51, name: "Mask group-2.png" },
+    { id: 33, url: "/Mask_group.png", width: 180, height: 51, name: "Mask group-2.png" },
+    { id: 44, url: "/Mask_group-1.png", width: 180, height: 51, name: "Mask group-2.png" },
+    { id: 45, url: "/Mask_group-2.png", width: 180, height: 51, name: "Mask group-2.png" },
+    { id: 46, url: "/Mask_group-3.png", width: 180, height: 51, name: "Mask group-2.png" },
+    { id: 47, url: "/Mask_group-4.png", width: 180, height: 51, name: "Mask group-2.png" },
   ],
 }
 
