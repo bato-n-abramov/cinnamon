@@ -27,37 +27,29 @@
 }
 
 .tickerInner {
+  overflow: hidden;
+}
+
+.track {
   display: flex;
-  width: max-content; 
-  gap: 70px;
-
-    @media (max-width: 768px) {
-      gap: 40px;
-    }
+  width: max-content;
+  animation: ticker-scroll 60s linear infinite;
+  will-change: transform;
 }
 
-.logosTrack {
-  display: flex;
-  align-items: center;
-  gap: 70px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  animation: ticker-scroll var(--ticker-duration) linear infinite;
-
-    @media (max-width: 768px) {
-      gap: 40px;
-    }
+.item {
+  flex: 0 0 auto;
+  width: 140px;
+  height: 40px;
+  margin-right: 70px;
 }
 
-.logosItem {
-    width: 140px;
-    height: 40px;
+.item:last-child { margin-right: 0; }
 
-    @media (max-width: 768px) {
-      width: 90px;
-    }
+@media (max-width: 768px) {
+  .item { width: 90px; margin-right: 40px; }
 }
+
 
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
