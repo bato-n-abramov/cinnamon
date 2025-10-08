@@ -2,14 +2,38 @@
 
 import Image from "next/image";
 import styles from "./OurTeam.module.scss";
+import { motion } from "framer-motion";
 
 export default function OurTeam() {
+
+    const container = {
+        hidden: {},
+        show: {
+            transition: {
+                delayChildren: 0.05,
+                staggerChildren: 0.12,
+            },
+        },
+    };
+
+
+    const fadeUp = {
+        hidden: { opacity: 0, y: 40 },
+        show: (i = 0) => ({
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, delay: i * 0.2, ease: "linear" },
+        }),
+    };
     return (
-        <section className={styles.ourTeam}>
+        <motion.section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }} className={styles.ourTeam}>
             <div className={`${styles.inner} container`}>
-                <h2 className={styles.title}>Our Team & <strong>Partners</strong></h2>
+                <motion.h2 variants={fadeUp} custom={0} className={styles.title}>Our Team & <strong>Partners</strong></motion.h2>
                 <div className={styles.list}>
-                    <a href="https://www.linkedin.com/in/egeslien/" target="_blank" className={styles.item}>
+                    <motion.a variants={fadeUp} custom={1} href="https://www.linkedin.com/in/egeslien/" target="_blank" className={styles.item}>
                         <div className={styles.image}>
                             <Image src={"/Eric.png"} width={500} height={500} alt={"Eric"} />
                         </div>
@@ -19,8 +43,8 @@ export default function OurTeam() {
                             </svg>
                             Eric Geslien</div>
                         <div className={styles.role}>CEO</div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/bryanandrade/" target="_blank" className={styles.item}>
+                    </motion.a>
+                    <motion.a variants={fadeUp} custom={2} href="https://www.linkedin.com/in/bryanandrade/" target="_blank" className={styles.item}>
                         <div className={styles.image}>
                             <Image src={"/Bryan.png"} width={500} height={500} alt={"Bryan"} />
                         </div>
@@ -30,8 +54,8 @@ export default function OurTeam() {
                             </svg>
                             Bryan Andrade</div>
                         <div className={styles.role}>CTO</div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/angelo-joseph-campano-294b5521/" target="_blank" className={styles.item}>
+                    </motion.a>
+                    <motion.a variants={fadeUp} custom={3} href="https://www.linkedin.com/in/angelo-joseph-campano-294b5521/" target="_blank" className={styles.item}>
                         <div className={styles.image}>
                             <Image src={"/Angelo.png"} width={500} height={500} alt={"Angelo"} />
                         </div>
@@ -41,8 +65,8 @@ export default function OurTeam() {
                             </svg>
                             Angelo Campano</div>
                         <div className={styles.role}>Pharma Strategy Advisor</div>
-                    </a>
-                    <a href="https://www.florahealth.io/" target="_blank" className={`${styles.item} ${styles.itemFlora}`}>
+                    </motion.a>
+                    <motion.a variants={fadeUp} custom={4} href="https://www.florahealth.io/" target="_blank" className={`${styles.item} ${styles.itemFlora}`}>
                         <div className={styles.image}>
                             <Image src={"/Flora.png"} width={500} height={500} alt={"Flora"} />
                         </div>
@@ -53,9 +77,9 @@ export default function OurTeam() {
                             </svg>
                             Flora Health</div>
                         <div className={styles.role}>Distribution Partner</div>
-                    </a>
+                    </motion.a>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
