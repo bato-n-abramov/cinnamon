@@ -14,7 +14,7 @@ export default function ContactLayout({ children }) {
     const global = globalMock;
 
     return (
-        <div className={montserrat.variable}>
+        <div className={`${montserrat.variable} page`}>
             <div className="pageWrapper">
                 <Header data={global?.Header?.[0] || global?.Header || null} />
                 {children}
