@@ -27,7 +27,7 @@ export default function PriorAuthorizationPage() {
 
 
     return (
-        <main>
+        <>
             <HeroV2 data={heroData} />
             <KeyBenefits />
             <HigherAccuracy />
@@ -35,7 +35,7 @@ export default function PriorAuthorizationPage() {
             <SpeedToTherapy />
             <CostBurnoutV2 data={costBurnoutData} />
             <Impact />
-        </main>
+        </>
     );
 }
 

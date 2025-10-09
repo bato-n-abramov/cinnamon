@@ -17,7 +17,7 @@ export default function FinancialAssistancePage() {
     }
 
     return (
-        <main>
+        <>
             <HeroV2 data={heroData} />
             <AssistanceBenefits />
             <GovernmentAssistance />
@@ -26,7 +26,7 @@ export default function FinancialAssistancePage() {
             <AssistanceBenefitsV2 />
             <CharityCare />
             <CoverageWaterfall />
-        </main>
+        </>
     );
 }
 

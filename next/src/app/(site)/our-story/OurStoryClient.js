@@ -14,12 +14,12 @@ export default function PremierAccessPage() {
     }
 
     return (
-        <main>
+        <>
             <HeroV2 data={heroData} />
             <AccessBarriers />
             <OurStory />
             <OurTeam />
-        </main>
+        </>
     );
 }
 

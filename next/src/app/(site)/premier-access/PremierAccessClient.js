@@ -16,10 +16,10 @@ export default function PremierAccessPage() {
     }
 
     return (
-        <main>
+        <>
             <HeroV2 data={heroData} />
             <WhyPremierAccess />
-        </main>
+        </>
     );
 }
 

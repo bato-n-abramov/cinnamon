@@ -1,9 +1,36 @@
+import { getBaseUrl } from "@/lib/baseUrl";
 import styles from "./Terms.module.scss";
 
-export const metadata = {
-    title: "Terms of Use | Cinnamon Health",
-};
 
+export const dynamic = "force-static";
+
+export function generateMetadata() {
+    const path = "/terms-of-use";
+    const title = "Terms of Use — Cinnamon Health";
+    const description = "Review Cinnamon Health’s terms of service to learn about conditions and requirements for using our platform.";
+    const ogImage = "/og/default.jpg";
+
+    return {
+        title,
+        description,
+        alternates: { canonical: path },
+        openGraph: {
+            type: "website",
+            url: `${getBaseUrl()}${path}`,
+            siteName: "Cinnamon Health",
+            title,
+            description,
+            images: [{ url: ogImage, width: 1200, height: 630 }],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [ogImage],
+        },
+        robots: { index: true, follow: true },
+    };
+}
 
 export default function TermsPage() {
     return (

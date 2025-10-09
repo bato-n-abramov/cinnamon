@@ -5,7 +5,8 @@ import Logos from "@/components/sections/logos/Logos";
 import Graphic from "@/components/sections/graphic/Graphic";
 import Features from "@/components/sections/features/Features";
 import CostBurnout from "@/components/sections/cost-burnout/CostBurnout";
-
+import { getBaseUrl } from "@/lib/baseUrl";
+import { jsonLd } from "@/lib/jsonLd";
 
 const heroData = {
   heading: "One platform. \nOne partner. <em>Zero cost</em>",
@@ -141,11 +142,67 @@ const costBurnoutData = {
   items: ['<strong>Real-time connection</strong> to the health-system EHR', '<strong>FHIR-based pipelines</strong> for EHR data requests', '<strong>Coverage Waterfall</strong> that benefits health systems and patients']
 }
 
-export const metadata = {
-  title: "Cinnamon Health",
-};
+
+export function generateMetadata() {
+  const base = getBaseUrl();
+  const path = "/";
+  const url = `${base}${path}`;
+
+  const title = "Cinnamon Health — One platform. One partner. Zero cost";
+  const description =
+    "Cinnamon aligns health systems, patients, and manufacturers to streamline prior authorization, unlock patient assistance, and accelerate adherence.";
+
+  const ogImage = "/og/default.jpg";
+
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      url,
+      siteName: "Cinnamon Health",
+      title,
+      description,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: "Cinnamon Health" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+    robots: { index: true, follow: true },
+  };
+}
+
 
 export default function Home() {
+  const base = getBaseUrl();
+
+  const orgLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Cinnamon Health",
+    url: base,
+    logo: `${base}/og/default.jpg`,
+    sameAs: [
+      "https://www.linkedin.com/company/cinnamon-%E2%9F%A8%E2%84%A2%E2%9F%A9/"
+
+    ],
+  };
+
+  const siteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: base,
+    name: "Cinnamon Health",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${base}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
 
   return (
     <main>
@@ -156,6 +213,9 @@ export default function Home() {
       <Graphic data={graphicData} />
       <Features data={featuresData} />
       <CostBurnout data={costBurnoutData} />
+      {/* JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(orgLd)} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(siteLd)} />
     </main>
   );
 }
